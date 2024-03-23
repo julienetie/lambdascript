@@ -106,9 +106,9 @@ Unless a valid edge case necessitates it.
 
 ### 1.2. Working with ECMAScript 2015, ECMAScript 2016 and EcmaScript Next
 Core ECMAScript features are widely supported across all major browsers and JavaScript platforms, ensuring the compatibility of raw ECMAScript 2015 and beyond at runtime, eliminating the need for compilation. To confirm the widespread support of a feature, you can refer to the following resources:
-- [Can I Use](https://caniuse.com/){:target="_blank"}
-- [MDN Web Docs](https://developer.mozilla.org/){:target="_blank"}
-- [ECMAScript 6 compatibility table](https://compat-table.github.io/compat-table/es6/){:target="_blank"}
+- <a href="https://caniuse.com" target="_blank">Can I Use</a>
+- <a href="https://developer.mozilla.org" target="_blank">MDN Web Doc</a>
+- <a href="https://compat-table.github.io/compat-table/es6" target="_blank">ECMAScript 6 compatibility table</a>
 
 ### 1.3. Polyfills
 Polyfills should be included manually as necessary, rather than relying on polyfill libraries that contain multiple polyfills. It's also discouraged to use invalid syntax to support non-standard features. Excessive or non-standard syntax should be avoided because it's unlikely to enhance performance, maintainability, or the user experience.
