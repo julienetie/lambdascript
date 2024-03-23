@@ -17,7 +17,11 @@ Decoupled JavaScript aims to:
   - [1.2. Working with ECMAScript 2015, ECMAScript 2016 and EcmaScript Next](#12-working-with-ecmascript-2015-ecmascript-2016-and-ecmascript-next)
   - [1.3. Polyfills](#13-polyfills)
   - [1.4. Exceptions](#14-exceptions)
-    
+ 
+- [2\. Standard JavaScript](#2-javascript-standard-style)
+  - [2.1. Automatic Semicolon Insertion]()
+  - [2.2. Extending Standard JavaScript to the Decoupled Specification]()
+
 - 3\. Arrow Functions
 
     1.1. Partial Application 
@@ -30,13 +34,10 @@ Decoupled JavaScript aims to:
 
 4. Void 
 
+- [4\. Conditional Statements]()
+
 5. Modules 
 
-6. Standard JavaScript 
-
-    5.1. Automatic Semicolon Insertion 
-
-    5.2. Extending Standard JavaScript for Decoupled JavaScript 
 
 7. Avoid or circumvent 
 
@@ -115,3 +116,26 @@ Polyfills should be included manually as necessary, rather than relying on polyf
 
 ### 1.4. Exceptions
 Before opting for legacy syntax, ensure that the platform you're developing for lacks adequate support for ECMAScript 2015 or above syntax. Understanding the limitations of the platforms you develop for is crucial before making such a decision as newer standards can allow for vastly improved productiveity.
+
+## 2. JavaScript Standard Style
+[![image](https://github.com/julienetie/decoupled-javascript/assets/7676299/b40f8fe6-2688-499e-bb53-ae8aacb2f5a6)](https://standardjs.com/)
+
+[JavaScript Standard Style](https://standardjs.com/)
+
+Decoupled JavaScript primarily adheres to the _JavaScript Standard Style_, renowned for its thoughtful design and high productivity, making it a fitting style guide for modern JavaScript codebases.
+
+[asiLink]: https://tc39.es/ecma262/#sec-automatic-semicolon-insertion
+
+### 2.1. Automatic Semicolon Insertion
+[Automatic Semicolon Insertion](asiLink) (ASI) is a feature of ECMAScript often misconstrued in discussions about the necessity of semicolons. To truly grasp this capability, it's crucial to understand the following:
+
+- ASI is an integral part of the [ECMAScript standard](asiLink) and is not a language mistake as oftne assumed.
+- Valid Source code is not responsible for minification; instead, minifiers tokenize semicolons independently.
+- ASI does not necessarily insert missing semicolons at the end of a line.
+
+The last point is frequently misunderstood. ASI doesn't handle all semicolon insertions but **specifically ensures semicolons are at the end of JavaScript sentences**.
+
+In JavaScript, a sentence typically refers to a complete statement or expression that performs a specific action or computation. Decoupled JavaScript embraces ASI, as advocated by the JavaScript Standard Style.
+
+
+In practice, ASI in JavaScript behaves similarly to programming languages such as Golang, Ruby, and Swift, where semicolons may be necessary in non-end-of-sentence scenarios.
