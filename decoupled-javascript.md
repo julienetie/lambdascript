@@ -19,8 +19,12 @@ Decoupled JavaScript aims to:
   - [1.4. Exceptions](#14-exceptions)
  
 - [2\. Standard JavaScript](#2-javascript-standard-style)
-  - [2.1. Automatic Semicolon Insertion]()
-  - [2.2. Extending Standard JavaScript to the Decoupled Specification]()
+  - [2.1. Automatic Semicolon Insertion](#21-automatic-semicolon-insertion)
+  - [2.2. Extending Standard JavaScript to the Decoupled Specification](#22-extending-standard-javascript-to-the-decoupled-specification)
+    - [2.2.1. Allow Switch Statement Fallthrough](#221-allow-switch-statement-fallthrough)
+    - [2.2.2. Enforce Single Quotes](#222-enforce-single-quotes)
+    - [2.2.3. Allow Void](#223-allow-void)
+  
 
 - 3\. Arrow Functions
 
