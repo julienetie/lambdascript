@@ -4,12 +4,12 @@ The Decoupled JavaScript standard delineates clear conventions for crafting loos
 
 ### Goal
 Decoupled JavaScript aims to:
-- Establish a contemporary standard, excluding detrimental practices and misconceptions
-- Eliminate practices that lead to brittle codebases
+- Establish a contemporary standard, excluding detrimental practices and misconceptions.
+- Eliminate practices that lead to brittle codebases.
 - Enhance productivity
-- Direct developers' attention towards meaningful paradigms
+- Direct developers' attention towards meaningful paradigms.
 - Resolve the ambiguity in different problem-solving approaches in JavaScript.
-- Establish Decoupled JavaScript as a best practice reference for Vanilla JavaScript
+- Establish Decoupled JavaScript as a best practice reference for Vanilla JavaScript.
 
 ### Areas of focus
 - [1\. Use of ECMAScript](#1-use-of-ecmascript)
@@ -112,10 +112,10 @@ Core ECMAScript features are widely supported across all major browsers and Java
 - <a href="https://compat-table.github.io/compat-table/es6" target="_blank">ECMAScript 6 compatibility table</a>
 
 ### 1.3. Polyfills
-Polyfills should be included manually as necessary, rather than relying on polyfill libraries that contain multiple polyfills. It's also discouraged to use invalid syntax to support non-standard features. Excessive or non-standard syntax should be avoided because it's unlikely to enhance performance, maintainability, or the user experience.
+Polyfills should be included manually as necessary, rather than relying on polyfill libraries that contain multiple polyfills. It's also discouraged to use invalid syntax to support non-standard features. Excessive or non-standard syntax should be avoided as it's unlikely to enhance performance, maintainability, or the user experience.
 
 ### 1.4. Exceptions
-Before opting for legacy syntax, ensure that the platform you're developing for lacks adequate support for ECMAScript 2015 or above syntax. Understanding the limitations of the platforms you develop for is crucial before making such a decision as newer standards can allow for vastly improved productiveity.
+Before opting for legacy syntax, ensure that the platform you're developing for lacks adequate support for ECMAScript 2015. Understanding the limitations of the platforms you develop for is crucial before making such a decision as newer standards can allow for vastly improved productiveity.
 
 ## 2. JavaScript Standard Style
 [![image](https://github.com/julienetie/decoupled-javascript/assets/7676299/b40f8fe6-2688-499e-bb53-ae8aacb2f5a6)](https://standardjs.com/)
@@ -129,13 +129,13 @@ Decoupled JavaScript primarily adheres to the _JavaScript Standard Style_, renow
 ### 2.1. Automatic Semicolon Insertion
 [Automatic Semicolon Insertion](asiLink) (ASI) is a feature of ECMAScript often misconstrued in discussions about the necessity of semicolons. To truly grasp this capability, it's crucial to understand the following:
 
-- ASI is an integral part of the [ECMAScript standard](asiLink) and is not a language mistake as oftne assumed.
+- ASI is an integral part of the [ECMAScript standard](asiLink) and is not a language mistake as often assumed.
 - Valid Source code is not responsible for minification; instead, minifiers tokenize semicolons independently.
 - ASI does not necessarily insert missing semicolons at the end of a line.
 
-The last point is frequently misunderstood. ASI doesn't handle all semicolon insertions but **specifically ensures semicolons are at the end of JavaScript sentences**.
+The last point is frequently misunderstood. ASI doesn't handle all semicolon insertions but **specifically ensures semicolons are inserted at the end of JavaScript sentences** where necessary.
 
 In JavaScript, a sentence typically refers to a complete statement or expression that performs a specific action or computation. Decoupled JavaScript embraces ASI, as advocated by the JavaScript Standard Style.
 
 
-In practice, ASI in JavaScript behaves similarly to programming languages such as Golang, Ruby, and Swift, where semicolons may be necessary in non-end-of-sentence scenarios.
+In practice, ASI in JavaScript behaves similarly to programming languages that don't rely on end of sentence semicolons such as Golang, Ruby, and Swift, where semicolons may only be necessary in non-end-of-sentence scenarios.
