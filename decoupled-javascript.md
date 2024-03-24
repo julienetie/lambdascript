@@ -1,6 +1,6 @@
 # Decoupled JavaScript
 
-The Decoupled JavaScript standard delineates clear conventions for crafting loosely-coupled JavaScript code using a procedural and partially-functional approach.
+Decoupled JavaScript standard delineates clear conventions for crafting loosely-coupled JavaScript code using a procedural and partially-functional approach.
 
 ### Goal
 Decoupled JavaScript aims to:
@@ -94,19 +94,17 @@ Decoupled JavaScript aims to:
 ## 1. Use of ECMAScript 
 ECMAScript is a standardized scripting language specification implemented by JavaScript. ECMAScript specifications are maintained by [Ecma International][ecmaIntLink], a standards organization, with input from various stakeholders in the industry. 
 
-New versions of ECMAScript are released periodically, introducing new features, syntax, and improvements to the language.
+New versions of ECMAScript are released periodically. These updates introduce new features, syntax, and improvements to the language.
 
 ### 1.1. The state of ECMAScript
-Several years preceding the introduction of the Decoupled JavaScript standard, major web browsers and JavaScript runtimes had already demonstrated either complete or near-complete support for ECMAScript 2015 (ES6) and ECMAScript 2016 (ES7), While also demonstrating robust support for forthcoming ECMAScript Next standards. Expanding on this, non-evergreen browser usage constitutes less than 1% of all global browser usage. Hence, in the present era, there's little necessity to:
+Several years preceding the introduction of Decoupled JavaScript standard, major web browsers and JavaScript runtimes had already demonstrated either complete or near-complete support for ECMAScript 2015 (ES6) and ECMAScript 2016 (ES7), While also demonstrating robust support for forthcoming ECMAScript Next standards. Expanding on this, less than 1% of all browsers in usage today are not evergreen.
 
-- Compile or transpile codebases from modern ECMAScript standards to ECMAScript 5.
-- Polyfill features absent in ECMAScript 5.
-- Advocate for increased usage of compilers like BabelJS.
-
-Unless a valid edge case necessitates it.
+- Given widespread support for recent ECMAScript versions in modern browsers, the need for transpilation to ES5 has diminished significantly.
+- Use polyfills judiciously, giving priority to essential missing features. Opt for targeted polyfills instead of bundled polyfills when possible.
+- Reserve ECMAScript compilation for rare edge cases where it's essential, minimizing its usage unless absolutely warranted.
 
 ### 1.2. Working with ECMAScript 2015, ECMAScript 2016 and EcmaScript Next
-Core ECMAScript features are widely supported across all major browsers and JavaScript platforms, ensuring the compatibility of raw ECMAScript 2015 and beyond at runtime, eliminating the need for compilation. To confirm the widespread support of a feature, you can refer to the following resources:
+Fundamental ECMAScript features enjoy extensive support across major browsers and JavaScript platforms, guaranteeing compatibility with raw ECMAScript 2015 and subsequent versions at runtime, thereby obviating the necessity for compilation. To verify the broad adoption of a feature, consult the following resources:
 - <a href="https://caniuse.com" target="_blank">Can I Use</a>
 - <a href="https://developer.mozilla.org" target="_blank">MDN Web Doc</a>
 - <a href="https://compat-table.github.io/compat-table/es6" target="_blank">ECMAScript 6 compatibility table</a>
@@ -115,7 +113,7 @@ Core ECMAScript features are widely supported across all major browsers and Java
 Polyfills should be included manually as necessary, rather than relying on polyfill libraries that contain multiple polyfills. It's also discouraged to use invalid syntax to support non-standard features. Excessive or non-standard syntax should be avoided as it's unlikely to enhance performance, maintainability, or the user experience.
 
 ### 1.4. Exceptions
-Before opting for legacy syntax, ensure that the platform you're developing for lacks adequate support for ECMAScript 2015. Understanding the limitations of the platforms you develop for is crucial before making such a decision as newer standards can allow for vastly improved productiveity.
+Before reverting to legacy syntax, it's crucial to ascertain whether the platform you're developing for lacks sufficient support for ECMAScript 2015. Recognizing the limitations of your development platforms is paramount, as embracing newer standards can lead to significantly enhanced productivity.
 
 ## 2. JavaScript Standard Style
 [![image](https://github.com/julienetie/decoupled-javascript/assets/7676299/b40f8fe6-2688-499e-bb53-ae8aacb2f5a6)](https://standardjs.com/)
