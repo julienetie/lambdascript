@@ -137,3 +137,97 @@ In JavaScript, a sentence typically refers to a complete statement or expression
 
 
 In practice, ASI in JavaScript behaves similarly to programming languages that don't rely on end of sentence semicolons such as Golang, Ruby, and Swift, where semicolons may only be necessary in non-end-of-sentence scenarios.
+
+### 2.2. Extending Standard JavaScript to the Decoupled Specification
+
+In certain scenarios, the JavaScript Standard Style (JSS) may not fully align with the principles of Decoupled JavaScript. However, JSS offers flexibility by allowing extensions to accommodate such variations. 
+
+Below is the Decoupled JavaScript extension for [ESLint](https://eslint.org/docs/latest/use/configure/configuration-files-new):
+
+_.eslintrc_
+```json
+{
+    "extends": [
+        "standard"
+    ],
+    "rules": {
+        "no-fallthrough": [
+            "off"
+        ],
+        "quotes": [
+            2,
+            "single",
+            {
+                "allowTemplateLiterals": true
+            }
+        ],
+        "no-void": "off"
+    }
+}
+```
+_eslint.config.js_
+```javascript
+export default [
+  {
+    extends: [
+      'standard'
+    ],
+    rules: {
+      'no-fallthrough': 'off',
+      'quotes': [
+        2,
+        'single',
+        {
+          'allowTemplateLiterals': true
+        }
+      ],
+      'no-void': 'off'
+    }
+  }
+]
+```
+#### 2.2.1 Allow Switch Statement Fallthrough
+```json
+{
+    "rules": {
+        "no-fallthrough": [
+            "off"
+
+```
+"Fallthrough" is a frequently misunderstood aspect of ECMAScript, sometimes perceived as an anomaly within the language due to its absence in other programming languages. Although the term "fallthrough" is not officially defined in the specification, its concept can be elucidated.
+
+Fallthrough entails the sequential execution of subsequent CaseClause blocks until encountering a break, return, or throw statement. If this behavior is undesired, any of these control keywords can be utilized to terminate the flow. Additionally, break statements can be employed with labels to manage flow within nested switch statements.
+
+In the context of Decoupled JavaScript, fallthrough is perceived as a valuable feature.
+
+
+#### 2.2.2 Enforce Single Quotes
+
+```json
+{
+    "rules": {
+        "quotes": [
+            2,
+            "single",
+            {
+                "allowTemplateLiterals": true
+            }
+```
+Utilizing single quotes in JavaScript primarily aligns with the preference of Decoupled JavaScript for maintaining consistency throughout codebases. However, it's essential to recognize that this choice is largely discretionary, and adhering to it is not a hard rule. The above configuration snippet tells ESLint to enforce the use of single quotes (') for strings in your code with an exception for template literals (backticks ``)
+
+#### 2.2.3 Allow Void
+```json
+{
+    "rules": {
+        "no-void": "off"
+```
+
+`void` is a JavaScript keyword that has largely been unnecessary since it returns undefined, which is the default return of the function context. However, with the introduction of Arrow Functions, void gains usefulness by enabling the omission of implicit returns in single-line arrow function syntax.
+
+```javascript
+const a = (b, c) => void b(c ** 2)
+
+const d = a(console.log,5) // Logs 25
+
+console.log(d) // Logs undefined
+```
