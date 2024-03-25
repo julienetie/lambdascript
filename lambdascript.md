@@ -1,3 +1,5 @@
+[label style=default]My cool label[/label]
+
 # LambdaScript
 
 Decoupled JavaScript standard delineates clear conventions for crafting loosely-coupled JavaScript code using a procedural and partially-functional approach.
@@ -10,6 +12,15 @@ Decoupled JavaScript aims to:
 - Direct developers' attention towards meaningful paradigms.
 - Resolve the ambiguity in different problem-solving approaches in JavaScript.
 - Establish Decoupled JavaScript as a best practice reference for Vanilla JavaScript.
+
+### Key 
+JavaScript adheres to numerous standards, spanning decades in its ecosystem. This is why LambdaScript cannot enforce all conventions as mandatory.
+However, prioritization can be based on encountered use cases, left to your discretion.
+
+- <img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="wefwe"> - Absolutely necessary and indispensable.
+- <img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical"> - Preferred unless unattainable.
+- <img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid"> - Refrain from encountering where possible.
+- <img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade"> - Strongly encouraged to find a way to circumvent or escape.
 
 ### Areas of focus
 - [1\. Use of ECMAScript](#1-use-of-ecmascript)
@@ -27,7 +38,7 @@ Decoupled JavaScript aims to:
 
 - [3\. Modules]
   - [3.1. Use ES Modules](#31-use-es-modules)
-  - [3.2. Prefer .js over .mjs]
+  - [3.2. Use the .js extension]
   - [3.3. Use the ModuleSpecifier Query String]
 
 - [4\. Variables]
@@ -267,3 +278,26 @@ const d = a(console.log,5) // Logs 25
 
 console.log(d) // Logs undefined
 ```
+
+## 3. Modules
+The script tag feature of JavaScript Modules, also known as ECMAScript Modules (ES modules), attained full browser support in early 2018 and stable Node.js support in 2019.
+The adoption of ES modules is steadily increasing, while traditional CommonJS usage is gradually decreasing. 
+
+### 3.1. Use ES Modules
+Embracing ES modules in JavaScript is crucial for several reasons:
+
+- Tooling Harmony: One module system means simpler tooling across the entire JavaScript landscape.
+- Code Sharing Made Easy: Share code across projects effortlessly with a single, unified system.
+- Performance Boost: ES modules' static structure allows for faster parsing and dependency resolution.
+- Standardized Power: Backed by the ECMAScript spec, ES modules guarantee consistent behavior everywhere.
+- Granular Imports: Import only the specific components you need with named exports and imports.
+- Dynamically Loaded: Load modules on-demand for improved performance and scalability in your applications.
+- Clear Dependencies: Reason about module dependencies with ease thanks to the static dependency graph.
+- Future-Proof: Stay ahead of the curve by using ES modules, which align with the future of JavaScript.
+
+### 3.2 Use the .js extension
+The ".mjs" file extension was introduced to clearly distinguish files containing ECMAScript Modules (ES modules) syntax from those containing CommonJS module syntax, which typically use the ".js" extension.
+
+However, with the increasing adoption and support for ES modules, the necessity to explicitly differentiate between the two module strategies diminishes. As ES modules become more prevalent, there will likely be little practical benefit in enforcing this distinction.
+
+### 
