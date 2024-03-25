@@ -1,5 +1,3 @@
-[label style=default]My cool label[/label]
-
 # LambdaScript
 
 Decoupled JavaScript standard delineates clear conventions for crafting loosely-coupled JavaScript code using a procedural and partially-functional approach.
@@ -17,10 +15,13 @@ Decoupled JavaScript aims to:
 JavaScript adheres to numerous standards, spanning decades in its ecosystem. This is why LambdaScript cannot enforce all conventions as mandatory.
 However, prioritization can be based on encountered use cases, left to your discretion.
 
-- <img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="wefwe"> - Absolutely necessary and indispensable.
-- <img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical"> - Preferred unless unattainable.
-- <img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid"> - Refrain from encountering where possible.
-- <img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade"> - Strongly encouraged to find a way to circumvent or escape.
+|Guidance   |Description  |
+|:---------------------------------------------------------------------------------------------------------------------------|:------------------------------------------|
+| <img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable"> | Absolutely necessary and indispensable    |
+| <img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">            | Preferred unless unattainable             |
+| <img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid">                                                          | Refrain from encountering where possible  |
+| <img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade">                                                          | Strongly encouraged to find a way to circumvent or escape |
+
 
 ### Areas of focus
 - [1\. Use of ECMAScript](#1-use-of-ecmascript)
