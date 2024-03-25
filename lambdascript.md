@@ -1,4 +1,4 @@
-# Decoupled JavaScript
+# LambdaScript
 
 Decoupled JavaScript standard delineates clear conventions for crafting loosely-coupled JavaScript code using a procedural and partially-functional approach.
 
