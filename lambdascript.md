@@ -321,3 +321,12 @@ Managing ES modules natively in large-scale projects (projects with dozens of mo
 - Managing ModuleSpecifier query strings is impractical, as it requires a hierarchical domino effect of changes for nested modules.
 
 Import Maps also introduces scoping which has conditional and security benefits that are not possible without use of the specification.
+
+## 4. Variables
+
+### 4.1. Use const for variables that are not reassigned [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
+If a variable will not be reassigned during it's lifetime it should be declared using `const`.
+Usage of const can help to catch unintended mutations early in the development process, leading to cleaner and more maintainable code.
+
+### 4.2. Use WeakRef for garbage collectable objects
+...
