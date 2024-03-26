@@ -301,4 +301,9 @@ The ".mjs" file extension was introduced to clearly distinguish files containing
 
 However, with the increasing adoption and support for ES modules, the necessity to explicitly differentiate between the two module strategies diminishes. As ES modules become more prevalent, there will likely be little practical benefit in enforcing this distinction.
 
-### 
+### 3.3. Invalidate the ModuleSpecifier Query String for ES imports [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+In the browser context, when using the import syntax in an ES module, the browser will typically be expected to cache the file. The module-specifier's query-string 
+allows for the cached file to be invalidated (or busted) by chaning it for each update.
+
+- If an ES module has been changed, the query st...
+
