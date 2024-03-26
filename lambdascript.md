@@ -301,9 +301,23 @@ The ".mjs" file extension was introduced to clearly distinguish files containing
 
 However, with the increasing adoption and support for ES modules, the necessity to explicitly differentiate between the two module strategies diminishes. As ES modules become more prevalent, there will likely be little practical benefit in enforcing this distinction.
 
-### 3.3. Invalidate the ModuleSpecifier Query String for ES imports [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
-In the browser context, when using the import syntax in an ES module, the browser will typically be expected to cache the file. The module-specifier's query-string 
-allows for the cached file to be invalidated (or busted) by chaning it for each update.
+### 3.3. Prefer Import Maps [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+Import Maps offer a streamlined way to associate module-specifiers (URLs) with designated names. Import Maps are supported across all major browsers. 
+In the browser context you can import ES modules using `type="module"` in a script tag or by utilizing Import Maps.
 
-- If an ES module has been changed, the query st...
 
+A common misconception regarding Import Maps is that the loading performance of multiple files is significantly slower when compared to a single bundle or code-split modules; however, this is not entirely accurate in practice.
+
+- Reduced Initial Load: Import Maps ensure users only download code for the specific page, minimizing the initial load compared to single bundles that require a full download.
+- Selective Loading: Import Maps enable loading only what the page necessitates, thus avoiding the loading of unused code present in a single bundle.
+- Efficient Updates: For returning visitors, only files that have changed (e.g., with a new filename hash) will be downloaded. In contrast, a single bundle would necessitate a full download regardless of the extent of changes.
+- Simplified Implementation: Import Maps eliminate the need for boilerplate logic of some single bundles and code-split modules.
+- No duplicated code: Code-splitting can occasionally result in duplicated shared dependencies.
+
+In real-world usage, many of the modularity and caching benefits of Import Maps make up for the performance degradation compared to the use of single bundles and code-split modules. All the aforementioned concerns are mostly negligible for small projects. However, large-scale projects may require a more comprehensive evaluation of resource loading to find a good balance between the size of modules and the number of modules to include.
+
+Managing ES modules natively in large-scale projects (projects with dozens of modules) without the use of Import Maps can become tedious:
+- URLs will need to be updated for all instances of the same module specifiers, as well as their filename hashes.
+- Managing ModuleSpecifier query strings is impractical, as it requires a hierarchical domino effect of changes for nested modules.
+
+Import Maps also introduces scoping which has conditional and security benefits that are not possible without use of the specification.
