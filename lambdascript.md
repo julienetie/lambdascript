@@ -157,13 +157,13 @@ Fundamental ECMAScript features enjoy extensive support across major browsers an
 - <a href="https://developer.mozilla.org" target="_blank">MDN Web Doc</a>
 - <a href="https://compat-table.github.io/compat-table/es6" target="_blank">ECMAScript 6 compatibility table</a>
 
-### 1.3. Polyfills
+### 1.3. Polyfill manually [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 Polyfills should be included manually as necessary, rather than relying on polyfill libraries that contain multiple polyfills. It's also discouraged to use invalid syntax to support non-standard features. Excessive or non-standard syntax should be avoided as it's unlikely to enhance performance, maintainability, or the user experience.
 
-### 1.4. Exceptions
+### 1.4. Use ECMAScript 2015 and above [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 Before reverting to legacy syntax, it's crucial to ascertain whether the platform you're developing for lacks sufficient support for ECMAScript 2015. Recognizing the limitations of your development platforms is paramount, as embracing newer standards can lead to significantly enhanced productivity.
 
-## 2. JavaScript Standard Style
+## 2. JavaScript Standard Style with LambdaScript rules 
 [![image](https://github.com/julienetie/decoupled-javascript/assets/7676299/b40f8fe6-2688-499e-bb53-ae8aacb2f5a6)](https://standardjs.com/)
 
 [JavaScript Standard Style](https://standardjs.com/)
@@ -172,7 +172,7 @@ Decoupled JavaScript primarily adheres to the _JavaScript Standard Style_, renow
 
 [asiLink]: https://tc39.es/ecma262/#sec-automatic-semicolon-insertion
 
-### 2.1. Automatic Semicolon Insertion
+### 2.1. Automatic Semicolon Insertion [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 [Automatic Semicolon Insertion](asiLink) (ASI) is a feature of ECMAScript often misconstrued in discussions about the necessity of semicolons. To truly grasp this capability, it's crucial to understand the following:
 
 - ASI is an integral part of the [ECMAScript standard](asiLink) and is not a language mistake as often assumed.
@@ -186,7 +186,7 @@ In JavaScript, a sentence typically refers to a complete statement or expression
 
 In practice, ASI in JavaScript behaves similarly to programming languages that don't rely on end of sentence semicolons such as Golang, Ruby, and Swift, where semicolons may only be necessary in non-end-of-sentence scenarios.
 
-### 2.2. Extending Standard JavaScript to the Decoupled Specification
+### 2.2. Extending Standard JavaScript to support LambdaScript [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 
 In certain scenarios, the JavaScript Standard Style (JSS) may not fully align with the principles of Decoupled JavaScript. However, JSS offers flexibility by allowing extensions to accommodate such variations. 
 
@@ -284,7 +284,7 @@ console.log(d) // Logs undefined
 The script tag feature of JavaScript Modules, also known as ECMAScript Modules (ES modules), attained full browser support in early 2018 and stable Node.js support in 2019.
 The adoption of ES modules is steadily increasing, while traditional CommonJS usage is gradually decreasing. 
 
-### 3.1. Use ES Modules
+### 3.1. Use ES Modules [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 Embracing ES modules in JavaScript is crucial for several reasons:
 
 - Tooling Harmony: One module system means simpler tooling across the entire JavaScript landscape.
@@ -296,7 +296,7 @@ Embracing ES modules in JavaScript is crucial for several reasons:
 - Clear Dependencies: Reason about module dependencies with ease thanks to the static dependency graph.
 - Future-Proof: Stay ahead of the curve by using ES modules, which align with the future of JavaScript.
 
-### 3.2 Use the .js extension
+### 3.2 Use the .js extension [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 The ".mjs" file extension was introduced to clearly distinguish files containing ECMAScript Modules (ES modules) syntax from those containing CommonJS module syntax, which typically use the ".js" extension.
 
 However, with the increasing adoption and support for ES modules, the necessity to explicitly differentiate between the two module strategies diminishes. As ES modules become more prevalent, there will likely be little practical benefit in enforcing this distinction.
