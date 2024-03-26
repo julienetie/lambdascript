@@ -172,7 +172,7 @@ Decoupled JavaScript primarily adheres to the _JavaScript Standard Style_, renow
 
 [asiLink]: https://tc39.es/ecma262/#sec-automatic-semicolon-insertion
 
-### 2.1. Automatic Semicolon Insertion [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+### 2.1. Use Automatic Semicolon Insertion [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 [Automatic Semicolon Insertion](asiLink) (ASI) is a feature of ECMAScript often misconstrued in discussions about the necessity of semicolons. To truly grasp this capability, it's crucial to understand the following:
 
 - ASI is an integral part of the [ECMAScript standard](asiLink) and is not a language mistake as often assumed.
@@ -301,7 +301,7 @@ The ".mjs" file extension was introduced to clearly distinguish files containing
 
 However, with the increasing adoption and support for ES modules, the necessity to explicitly differentiate between the two module strategies diminishes. As ES modules become more prevalent, there will likely be little practical benefit in enforcing this distinction.
 
-### 3.3. Prefer Import Maps [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+### 3.3. Use Import Maps [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 Import Maps offer a streamlined way to associate module-specifiers (URLs) with designated names. Import Maps are supported across all major browsers. 
 In the browser context you can import ES modules using `type="module"` in a script tag or by utilizing Import Maps.
 
