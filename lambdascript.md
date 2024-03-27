@@ -44,7 +44,6 @@ However, prioritization can be based on encountered use cases, left to your disc
 
 - [4\. Variables]
   - [4.1. Use const]
-  - [4.2, Use let if reassigned] 
   - [4.2. Use WeakRef for garbage collectable objects]
 
 - [5\. Dynamic Type Management] 
@@ -106,6 +105,8 @@ However, prioritization can be based on encountered use cases, left to your disc
     7.9. Object.create
 
     7.10 var
+
+    7.11 Object.freeze (Avoid for functional code)
 
 9. Exception Handling 
 
@@ -328,5 +329,12 @@ Import Maps also introduces scoping which has conditional and security benefits 
 If a variable will not be reassigned during it's lifetime it should be declared using `const`.
 Usage of const can help to catch unintended mutations early in the development process, leading to cleaner and more maintainable code.
 
-### 4.2. Use WeakRef for garbage collectable objects
-...
+### 4.2. Use WeakRef for garbage collectable objects  [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
+
+An object won't qualify for garbage collection unless there are no remaining references, or the remaining reference is held within a reference type like WeakRef, WeakMap, or WeakSet. When referencing an object that might be removed or is no longer referenced by any parts of the codebase during execution, it's advisable touse a weakly referenced type.
+
+Utilize WeakRef for assigning variables to objects that will require dereferencing during the execution lifetime.
+
+## 5. Dynamic Type Management
+JavaScript features type coercsion which can sometimes often become a footgun if not managed accordingly. Quirks abound in JavaScript's type system. However, dynamic types in JavaScript are entirely manageable, and there are practices to mitigate common issues when exposing results.
+
