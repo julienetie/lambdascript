@@ -369,8 +369,7 @@ Display a placeholder for a type mismatch when anticipating an integer value.
 safe.int(value, placeholder)
 ```
 ### 5.2. Compare using the strict equality operator [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key) 
-While the loose-equality operator can serve adequately for testing various types, with or without coercion, strict equality provides greater predictability by mandating both value and type to match. Enforcing strict equality minimizes the variability in expected outcomes among collaborators.
-
+Employing the strict equality operator for all operand comparisons aims to enforce consistency and predictability, which is likely to result in enhanced type safety, particularly in large-scale projects. Whilst the loose-equality operator can serve adequately for testing various types, with or without coercion, strict equality provides greater predictability by mandating both value and type to match.
 ```javascript
 leftOperand === rightOperand
 ```
@@ -476,4 +475,4 @@ It could also be seen as potentially falsy if we expect:
 - null
 - false
 
-There isn't a clear-cut inverse rule, and these type conventions aren't exhaustive. It's crucial never to assume that a dynamic value will always be of the type you expect.
+There isn't a clear-cut inverse rule. It's crucial never to assume that a dynamic value will always be of the type you expect.
