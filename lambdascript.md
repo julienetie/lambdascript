@@ -478,8 +478,8 @@ It could also be seen as potentially falsy if we expect:
 There isn't a clear-cut inverse rule. It's crucial never to assume that a dynamic value will always be of the type you expect.
 
 ## 6. Arrow Functions 
-Arrow Functions allow you to write lambda expressions eloquently in JavaScript which are incredibly fitting to the functional nature of JavaScript.
+Arrow Functions enable you to write lambda expressions concisely in JavaScript, which are incredibly fitting to the functional nature of JavaScript.
 
 
 ### 6.1 Use Arrow Functions [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
-Arrow functions are imperiative for the LambdaScript specification as it allows your code to focus on composability as opposed to context. 
+Arrow functions are imperative for the LambdaScript specification, as they enable your code to prioritize composability over context, which can lead to brittle code in JavaScript.
