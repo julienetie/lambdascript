@@ -335,6 +335,145 @@ An object won't qualify for garbage collection unless there are no remaining ref
 
 Utilize WeakRef for assigning variables to objects that will require dereferencing during the execution lifetime.
 
-## 5. Dynamic Type Management
+## 5. Types
 JavaScript features type coercsion which can sometimes often become a footgun if not managed accordingly. Quirks abound in JavaScript's type system. However, dynamic types in JavaScript are entirely manageable, and there are practices to mitigate common issues when exposing results.
 
+### 5.1. Safeguard final values [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
+
+Use conditional statements to shield end-users from encountering undesirable output values. The rule the prevent this is to treat 
+
+> ### All final values are potential non-values.
+
+A final value should be regarded as a value intended for consumption by end-users or as the outcome of a public or third-party API.
+This convention is intended as a paramount JavaScript best practice, essential for competently delivering content. 
+NaN, undefined, and null are the undesirable values that safeguarding helps to mitigate against.
+
+#### 5.1.1. Safeguard string
+Display a placeholder for a type mismatch when anticipating a text value.
+
+```javascript
+safe.str(value, placeholder)
+```
+
+#### 5.1.2. Safeguard number
+Display a placeholder for a type mismatch when anticipating a numeric value.
+
+```javascript
+safe.number(value, placeholder)
+```
+
+#### 5.1.2. Safeguard integer
+Display a placeholder for a type mismatch when anticipating an integer value.
+
+```javascript
+safe.int(value, placeholder)
+```
+### 5.2. Compare using the strict equality operator [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key) 
+While the loose-equality operator can serve adequately for testing various types, with or without coercion, strict equality provides greater predictability by mandating both value and type to match. Enforcing strict equality minimizes the variability in expected outcomes among collaborators.
+
+```javascript
+leftOperand === rightOperand
+```
+
+### 5.3. Use rectified typechecking [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
+There are various ways to check common types in JavaScript, but the standard approach might not always align with general-purpose intentions.
+Below illustrates common types with type checks, refined for broader utility.
+
+#### isArray
+```javascript
+Array.isArray(value)
+```
+#### isBigInt
+```javascript
+typeof value === 'bigint'
+```
+#### isBoolean
+```javascript
+typeof value === 'boolean'
+```
+#### isFunction
+```javascript
+typeof value === 'function'
+```
+#### isInteger
+```javascript
+Number.isInteger(value)
+```
+#### isNaN
+```javascript
+Number.isNaN(value)
+```
+#### isNumeric
+```javascript
+typeof value === 'number' && !Number.isNaN(value)
+```
+#### isNull
+```javascript
+value === null
+```
+#### isObject
+```javascript
+vlaue !== null && typeof value === 'object' && !Array.isArray(value)
+```
+#### isString
+```javascript
+typeof value === 'string'
+```
+#### isSymbol
+```javascript
+typeof value === 'symbol'
+```
+#### isUndefined
+```javascript
+value === undefined
+```
+#### isNonValue (NaN, null or undefined)
+```javascript
+!(value === undefined || value === null || Number.isNaN(value))
+```
+
+> ### Arbritrary type-checking
+> These type checks can occasionally yield undesired outcomes.
+>
+> #### isNumber (Including numerical and NaN types) 
+> ```javascript
+> typeof value === 'number'
+> ```
+>
+> #### isAnyObject (Including null and array)
+> ```javascript
+> typeof value === 'object'
+> ```
+  
+
+### 5.4. Use reliable conditinal statements [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
+Use conditional statemenets with reliable typechecking. 
+
+#### 5.4.1 Common Falsy and Truthy Types
+Unchecked values are not consistently reliable and remain among the primary culprits for type errors in JavaScript development.
+```javasscript
+if(value)
+```
+The above condition could be deemed acceptable as potentially truthy, provided you understand what evaluates as true.
+
+- All numbers except 0 and NaN
+- All BigInt except 0n
+- All strings except empty strings ''
+- All other primitive values except undefined and false
+- All objects except null
+- Functions
+- And of course true
+
+```javasscript
+if(value)
+```
+It could also be seen as potentially falsy if we expect:
+- 0
+- NaN
+- 0n
+- ''
+- undefined
+- null
+- false
+
+There isn't a clear-cut inverse rule, and these type conventions aren't exhaustive. It's crucial never to assume that a dynamic value will always be of the type you expect.
