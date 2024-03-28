@@ -478,8 +478,54 @@ It could also be seen as potentially falsy if we expect:
 There isn't a clear-cut inverse rule. It's crucial never to assume that a dynamic value will always be of the type you expect.
 
 ## 6. Arrow Functions 
-Arrow Functions enable you to write lambda expressions concisely in JavaScript, which are incredibly fitting to the functional nature of JavaScript.
-
+Arrow Functions in JavaScript allow for concise expression of lambda expressions, which are idiomatic to the core language. They provide a succinct syntax for defining anonymous functions, leveraging lambda expression concepts extensively.
 
 ### 6.1 Use Arrow Functions [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
-Arrow functions are imperative for the LambdaScript specification, as they enable your code to prioritize composability over context, which can lead to brittle code in JavaScript.
+Arrow functions are imperative in the LambdaScript specification, prioritizing composability over context, which reduces the risk of creating brittle code in JavaScript. While arrow functions are capable of adopting a "this" based execution context, they are used in LambdaScript to explicitly denote the absence of context based programming.
+
+An example of composable lambda expressions:
+```javascript
+/**
+ * Applies a series of transformation functions to an input value.
+ * @param {function|string} f - The first transformation function or string to be transformed.
+ * @param {any} x - The input value to be transformed.
+ * @returns {function} - A function that applies the remaining transformation functions.
+ */
+const transform = (f, x) => {
+  if (typeof f === 'function') {
+    const y = f(x)
+    return z => transform(z, y)
+  }
+  return z => transform(z, f)
+}
+
+const addWorld = x => x + 'world'
+const addUnderscore = x => x.slice(0, 5) + '_' + x.slice(5)
+const upperCase = x => x.toUpperCase()
+const lowerCase = x => x.toLowerCase()
+
+// Example usage:
+transform('Hello')
+  (addWorld)
+  (addUnderscore)
+  (upperCase)
+  (lowerCase)
+  (console.log)
+```
+LambdaScript emphassis a concution of procedrual and functional progrmaming. LambdaScript does not fight against the underlying strenghs of JavaScript ignoring paradigms that can add complexities 
+
+### 6.2 Currying
+
+### 6.3 Partial Application
+
+### 6.4 Composition
+
+### 6.5 Recursion
+
+### 6.6 Lazy Evaluation
+
+### 6.7 Enclosed Values
+
+### 6.8 Enclosed functions
+
+### 6.9 Inheritance and Polymorphism
