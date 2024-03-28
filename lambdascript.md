@@ -514,6 +514,22 @@ transform('Hello')
 ```
 LambdaScript emphassis a concution of procedrual and functional progrmaming. LambdaScript does not fight against the underlying strenghs of JavaScript ignoring paradigms that can add complexities 
 
+### 6.2 Invocation Order [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+LambdaScript in practice can constitutes to several functions needing to be declared before being called. therefore it helps to place functions in an order where dependent functions are placed above their dependencies. 
+
+
+Due to the nature of function expressions, LambdaScript commonly requires functions to be declared before they are called. To ensure smooth execution, it's recommended to position dependent functions (those relying on others) below the functions they depend on.
+
+> ### Arrange functions and their calls from bottom to top when possible.
+
+This rule has several benefits. 
+- Decreases the likelihood of reference errors, particularly when transitioning between asynchronous and synchronous usage.
+- Presents a more intuitive and predictable depiction of JavaScript's code execution flow.
+- Reduces cognitive hurdles when restructuring code.
+- Provides a single structural style guide.
+
+For instance, in a module, an `init()` function should be expected at the very bottom of a module, just before any final exports.
+
 ### 6.2 Currying
 
 ### 6.3 Partial Application
@@ -528,4 +544,4 @@ LambdaScript emphassis a concution of procedrual and functional progrmaming. Lam
 
 ### 6.8 Enclosed functions
 
-### 6.9 Inheritance and Polymorphism
+### 6.9 Inheritance and Subtype Polymorphism
