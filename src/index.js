@@ -32,3 +32,21 @@ export const tail = {
         return result
     }
 }
+
+
+/**
+ * Composes multiple functions into a single function.
+ *
+ * @param {...Function} fns - The functions to compose.
+ * @returns {Function} A new function that represents the composition of the provided functions.
+ */
+export const comp = (...fns) => arg => fns.reduceRight((acc, fn) => fn(acc), arg)
+
+
+/**
+ * Chains multiple functions, applying them sequentially from left to right.
+ *
+ * @param {...Function} fns - The functions to chain.
+ * @returns {Function} A new function that represents the chaining of the provided functions.
+ */
+export const pipe = (...fns) => arg => fns.reduce((acc, fn) => fn(acc), arg)
