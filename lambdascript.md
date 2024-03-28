@@ -27,8 +27,8 @@ However, prioritization can be based on encountered use cases, left to your disc
 |:---------------------------------------------------------------------------------------------------------------------------|:------------------------------------------|
 | <img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable"> | Absolutely necessary and indispensable    |
 | <img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">            | Preferred unless unattainable             |
-| <img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid">                                                          | Refrain from encountering where possible  |
-| <img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade">                                                          | Strongly encouraged to find a way to circumvent or escape |
+| <img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">         | Refrain from encountering where possible  |
+| <img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">| Strongly encouraged to find a way to circumvent or escape |
 
 
 ### Areas of focus
@@ -44,7 +44,7 @@ However, prioritization can be based on encountered use cases, left to your disc
     - [2.2.1. Allow Switch Statement Fallthrough](#221-allow-switch-statement-fallthrough)
     - [2.2.2. Enforce Single Quotes](#222-enforce-single-quotes)
     - [2.2.3. Allow Void](#223-allow-void)
-
+<!--
 - [3\. Modules]
   - [3.1. Use ES Modules](#31-use-es-modules)
   - [3.2. Use the .js extension]
@@ -54,69 +54,8 @@ However, prioritization can be based on encountered use cases, left to your disc
   - [4.1. Use const]
   - [4.2. Use WeakRef for garbage collectable objects]
 
-- [5\. Dynamic Type Management] 
-
-    11.1. Truthy Types 
-   
-    11.2. Falsy Types 
-   
-    11.3. Non-values 
-    
-    - 11.3.1. NaN 
-      
-    - 11.3.2. Null 
-      
-    - 11.3.3. Undefined 
-   
-    11.4. Objects 
-   
-    11.5. Arrays 
-   
-   11.6. Numbers
- 
- 
-- 3\. Arrow Functions
-
-    1.1. Partial Application 
-
-    1.2. Currying 
-
-    1.3. Compose and Pipe 
-
-    1.4. Recursion 
-
-4. Void 
-
-- [4\. Conditional Statements]()
-
-
-7. Avoid or circumvent 
-
-    7.1. Function Declarations 
-
-    7.2. this 
-
-    7.3. bind 
-
-    7.4. call 
-
-    7.5. apply 
-
-    7.6. new (For user-defined function instances) 
-
-    7.7. prototype 
-
-    7.8. constructor 
-
-    7.9. Object.create
-
-    7.10 var
-
-    7.11 Object.freeze (Avoid for functional code)
-
-9. Exception Handling 
-
-    8.1. Logging errors and warnings 
+ - [5\. Dynamic Type Management] 
+-->
 
 
 
@@ -696,4 +635,35 @@ Factory objects can be any custom object type:
 - Map
 - Set
 
+## 7. Exception Handling
+TBA
+
+## 8. Outdated Language Constructs
+This is a list of language constructs to either avoid or evade in JavaScript when adhering to LambdaScript standards. While there may be situations where avoiding or evading the use of an outdated language construct is challenging, it's recommended to de-emphasize its usage rather than considering it completely obsolete.
+
+### 8.1 `__proto__` [<img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">](#key)
+
+### 8.2 `apply` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+
+### 8.3 `bind` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+
+### 8.4 `call` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+
+### 8.5 `class` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+
+### 8.6 `constructor` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+
+### 8.7 `function` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+
+### 8.8 `Object.freeze()` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+
+### 8.9 `Object.seal()` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+
+### 8.10 `prototype` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+
+### 8.11 User defined `new` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+
+### 8.12 `this` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+
+### 8.13 `var` [<img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">](#key)
 
