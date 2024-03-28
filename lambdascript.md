@@ -1,15 +1,22 @@
-# LambdaScript
+# λ LambdaScript
+> ### A Vanilla JavaScript Standard for Modern Best Practices
 
-Decoupled JavaScript standard delineates clear conventions for crafting loosely-coupled JavaScript code using a procedural and partially-functional approach.
+LambdaScript standard delineates clear conventions for crafting loosely-coupled JavaScript code using a procedural and partially-functional approach.
 
 ### Goal
-Decoupled JavaScript aims to:
+LambdaScript aims to:
 - Establish a contemporary standard, excluding detrimental practices and misconceptions.
 - Eliminate practices that lead to brittle codebases.
 - Enhance productivity
 - Direct developers' attention towards meaningful paradigms.
 - Resolve the ambiguity in different problem-solving approaches in JavaScript.
-- Establish Decoupled JavaScript as a best practice reference for Vanilla JavaScript.
+- Establish LambdaScript as a best practice reference for Vanilla JavaScript.
+
+### What is LambdaScript not
+- Not a programming language
+- Not a compiler
+- Not a full fledged functional programming specificaiton
+- Not a new syntax
 
 ### Key 
 JavaScript adheres to numerous standards, spanning decades in its ecosystem. This is why LambdaScript cannot enforce all conventions as mandatory.
@@ -146,7 +153,7 @@ ECMAScript is a standardized scripting language specification implemented by Jav
 New versions of ECMAScript are released periodically. These updates introduce new features, syntax, and improvements to the language.
 
 ### 1.1. The state of ECMAScript
-Several years preceding the introduction of Decoupled JavaScript standard, major web browsers and JavaScript runtimes had already demonstrated either complete or near-complete support for ECMAScript 2015 (ES6) and ECMAScript 2016 (ES7), While also demonstrating robust support for forthcoming ECMAScript Next standards. Expanding on this, less than 1% of all browsers in usage today are not evergreen.
+Several years preceding the introduction of LambdaScript standard, major web browsers and JavaScript runtimes had already demonstrated either complete or near-complete support for ECMAScript 2015 (ES6) and ECMAScript 2016 (ES7), While also demonstrating robust support for forthcoming ECMAScript Next standards. Expanding on this, less than 1% of all browsers in usage today are not evergreen.
 
 - Given widespread support for recent ECMAScript versions in modern browsers, the need for transpilation to ES5 has diminished significantly.
 - Use polyfills judiciously, giving priority to essential missing features. Opt for targeted polyfills instead of bundled polyfills when possible.
@@ -169,7 +176,7 @@ Before reverting to legacy syntax, it's crucial to ascertain whether the platfor
 
 [JavaScript Standard Style](https://standardjs.com/)
 
-Decoupled JavaScript primarily adheres to the _JavaScript Standard Style_, renowned for its thoughtful design and high productivity, making it a fitting style guide for modern JavaScript codebases.
+LambdaScript primarily adheres to the _JavaScript Standard Style_, renowned for its thoughtful design and high productivity, making it a fitting style guide for modern JavaScript codebases.
 
 [asiLink]: https://tc39.es/ecma262/#sec-automatic-semicolon-insertion
 
@@ -182,16 +189,16 @@ Decoupled JavaScript primarily adheres to the _JavaScript Standard Style_, renow
 
 The last point is frequently misunderstood. ASI doesn't handle all semicolon insertions but **specifically ensures semicolons are inserted at the end of JavaScript sentences** where necessary.
 
-In JavaScript, a sentence typically refers to a complete statement or expression that performs a specific action or computation. Decoupled JavaScript embraces ASI, as advocated by the JavaScript Standard Style.
+In JavaScript, a sentence typically refers to a complete statement or expression that performs a specific action or computation. LambdaScript embraces ASI, as advocated by the JavaScript Standard Style.
 
 
 In practice, ASI in JavaScript behaves similarly to programming languages that don't rely on end of sentence semicolons such as Golang, Ruby, and Swift, where semicolons may only be necessary in non-end-of-sentence scenarios.
 
 ### 2.2. Extending Standard JavaScript to support LambdaScript [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 
-In certain scenarios, the JavaScript Standard Style (JSS) may not fully align with the principles of Decoupled JavaScript. However, JSS offers flexibility by allowing extensions to accommodate such variations. 
+In certain scenarios, the JavaScript Standard Style (JSS) may not fully align with the principles of LambdaScript. However, JSS offers flexibility by allowing extensions to accommodate such variations. 
 
-Below is the Decoupled JavaScript extension for [ESLint](https://eslint.org/docs/latest/use/configure/configuration-files-new):
+Below is the LambdaScript extension for [ESLint](https://eslint.org/docs/latest/use/configure/configuration-files-new):
 
 _.eslintrc_
 ```json
@@ -247,7 +254,7 @@ export default [
 
 Fallthrough entails the sequential execution of subsequent CaseClause blocks until encountering a break, return, or throw statement. If this behavior is undesired, any of these control keywords can be utilized to terminate the flow. Additionally, break statements can be employed with labels to manage flow within nested switch statements.
 
-In the context of Decoupled JavaScript, fallthrough is perceived as a valuable feature.
+In the context of LambdaScript, fallthrough is perceived as a valuable feature.
 
 
 #### 2.2.2 Enforce Single Quotes
@@ -262,7 +269,7 @@ In the context of Decoupled JavaScript, fallthrough is perceived as a valuable f
                 "allowTemplateLiterals": true
             }
 ```
-Utilizing single quotes in JavaScript primarily aligns with the preference of Decoupled JavaScript for maintaining consistency throughout codebases. However, it's essential to recognize that this choice is largely discretionary, and adhering to it is not a hard rule. The above configuration snippet tells ESLint to enforce the use of single quotes (') for strings in your code with an exception for template literals (backticks ``)
+Utilizing single quotes in JavaScript primarily aligns with the preference of LambdaScript for maintaining consistency throughout codebases. However, it's essential to recognize that this choice is largely discretionary, and adhering to it is not a hard rule. The above configuration snippet tells ESLint to enforce the use of single quotes (') for strings in your code with an exception for template literals (backticks ``)
 
 #### 2.2.3 Allow Void
 ```json
