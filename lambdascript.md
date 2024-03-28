@@ -88,8 +88,6 @@ However, prioritization can be based on encountered use cases, left to your disc
 
 - [4\. Conditional Statements]()
 
-5. Modules 
-
 
 7. Avoid or circumvent 
 
@@ -119,31 +117,7 @@ However, prioritization can be based on encountered use cases, left to your disc
 
     8.1. Logging errors and warnings 
 
-10. Safeguarding 
 
-   10.1. Safeguarding numbers 
-
-   10.2. Safeguarding strings 
-
-11. Type Management 
-
-    11.1. Truthy Types 
-   
-    11.2. Falsy Types 
-   
-    11.3. Non-values 
-    
-    - 11.3.1. NaN 
-      
-    - 11.3.2. Null 
-      
-    - 11.3.3. Undefined 
-   
-    11.4. Objects 
-   
-    11.5. Arrays 
-   
-   11.6. Numbers
 
 [ecmaIntLink]: https://ecma-international.org
 
