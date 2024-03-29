@@ -666,4 +666,19 @@ This is a list of language constructs to either avoid or evade in JavaScript whe
 ### 8.12 `this` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
 
 ### 8.13 `var` [<img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">](#key)
+The `var` keyword should no longer be used within ECMAScript 2015+ based codebase.
 
+[letLink]:https://caniuse.com/let
+[constLink]:https://caniuse.com/const
+> #### Rationale:
+> - **Function Scoped**: Variables declared with `var` are function-scoped, which can introduce unexpected behaviors and potential bugs, especially in large codebases.
+> - **Hoisted**: Variables declared with `var` are hoisted to the top of their scope during the compilation phase and initialized with a value of `undefined` before the actual declaration is encountered. This behavior can make it difficult to understand the flow of the code.
+> - **Global Scope Pollution**: When `var` is used outside of a function, the variable is assigned to the global scope. This can lead to variable name collisions and unintended side effects.
+> - **No Block Scope**: Unlike `let` and `const`, variables declared with `var` do not have block scope. This means they are not confined to the nearest enclosing block (such as if statements or loops), but rather to the nearest function scope. This lack of block scoping can lead to issues with variable leakage and unintended modifications.
+> - **Redeclarable**: Variables declared with `var` can be redeclared within the same scope without any warning or error. This can lead to accidental reassignments and difficult-to-debug code.
+> >
+> >  #### Alternative:
+> >  - Use `const` for immutable primitive values and constant object references.
+> >  - Use `let` for values that are reassigned.
+> >
+> > [let](#letLink) and [const](#constLink) have been fully supported in all major browsers since 2017
