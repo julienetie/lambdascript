@@ -681,4 +681,11 @@ The `var` keyword should no longer be used within ECMAScript 2015+ based codebas
 > >  - Use `const` for immutable primitive values and constant object references.
 > >  - Use `let` for values that are reassigned.
 > >
-> > [let](#letLink) and [const](#constLink) have been fully supported in all major browsers since 2017
+> > [let](#letLink) and [const](#constLink) have been fully supported in all major browsers since 2017.
+
+-------------
+## FAQ
+
+[#olcLink]:#8-outdated-language-constructs
+### Do I have to use functional programming paradigms to write valid LambdaScript?
+> You don't need to strictly adhere to functional programming paradigms to write valid LambdaScript. While LambdaScript isn't a full-fledged functional programming standard, it emphasizes both procedural and functional programming styles.The extent to which you incorporate functional or procedural programming paradigms is entirely up to you or your team, as long as you adhere to the guidelines set by the [Outdated Language Constructs](olcLink).
