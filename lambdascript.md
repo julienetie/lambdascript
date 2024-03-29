@@ -688,15 +688,15 @@ The `var` keyword should no longer be used within ECMAScript 2015+ based codebas
 
 [#olcLink]:#8-outdated-language-constructs
 ### Do I have to use functional programming paradigms to write valid LambdaScript?
-> You don't need to strictly adhere to functional programming paradigms to write valid LambdaScript. While LambdaScript isn't a full-fledged functional programming standard, it emphasizes both procedural and functional programming styles.The extent to which you incorporate functional or procedural programming paradigms is entirely up to you or your team, as long as you adhere to the guidelines set by the [Outdated Language Constructs](olcLink).
+> You don't need to strictly adhere to functional programming paradigms to write valid LambdaScript. While LambdaScript isn't a full-fledged functional programming standard, it emphasizes both procedural and functional programming styles.The extent to which you incorporate functional or procedural programming paradigms is entirely up to you or your team as long as you adhere to the guidelines set by the [Outdated Language Constructs](olcLink).
 
-### Why is it called LambdaScript
-> This standard is named LambdaScript because it heavily emphasizes the use of arrow functions, also known as lambda functions. While lambda calculus can be achieved with the conventions of this standard, it's not recommended to write entire codebases solely in the style of lambda calculus for general-purpose libraries and applications, as it may introduce maintainability issues as well as potentially impacting performance in some cases.
+### Why is it called LambdaScript?
+> This standard is named LambdaScript because it heavily emphasizes the use of arrow functions, also known as lambda functions. While lambda calculus can be achieved within the conventions of LamdbaScript, it's not recommended to write entire codebases predominantly in the style of lambda calculus for general-purpose programming, as it may introduce maintainability issues as well as potentially impacting performance in some cases.
 
 ### Why does LambdaScript lack several functional programming concepts?
-> The LambdaScript standard was designed to complement JavaScript's strengths rather than to coerce it into a full-fledged functional programming language. JavaScript is a pseudo-functional programming language, lacking some features found in full-fledged functional programming languages such as Haskell or Scala. The beauty of LambdaScript lies in its ability to create elegant code with just a few utility functions, without requiring a new syntax or compiler.
+> The LambdaScript standard was designed to complement JavaScript's strengths rather than to coerce it into a full-fledged functional programming language. JavaScript is a pseudo-functional programming language, lacking some core FP features found in programming languages such as Haskell and Scala. The beauty of LambdaScript lies in its ability to create elegant code with just a few utility functions, without requiring a new syntax or compiler.
 
-### What is the purpose of LambdaScript 
+### What is the purpose of LambdaScript?
 > LambdaScript is a standard for writing modern JavaScript in an efficient and declarative manner. It places a strong emphasis on preventing tightly-coupled code, commonly found in context-based programming, which is prevalent in JavaScript. LambdaScript improves the JavaScript development experience by encouraging and enforcing certain styles while avoiding outdated practices.
 >
 > Some of the benefits to using LamdaScript includes:
