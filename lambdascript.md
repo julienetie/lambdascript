@@ -669,6 +669,24 @@ Factory objects can be any custom object type:
 TBA
 
 ## 8. Global Store
+Global state in JavaScript poses challenges due to its high mutability. ECMAScript has evolved to mitigate these challenges by introducing stricter constructs.
+
+Modules offer a way to share functions and data, but sometimes there's a need for a global source of truth to share real-time changes across the JavaScript execution environment. This is achievable by using an exported object, reffered to as `_store` by filename `_store.js`, to be imported by any module needing to read or write to its properties.
+
+LambdaScript follows these conventions for a global store:
+
+1. There should be one global store named _store, exported as an object literal from _store.js.
+2. It should contain predefined properties and nested properties as necessary.
+3. _store is solely a data store and should not include any functions or additional functionality.
+4. _store is primarily for state shared between multiple modules. It may not suffice as a complete state management solution, since it lacks mechanisms such as subscribing to changes but it can serve as state manaement for minor usage.
+5. Default types should be assigned to properties using syntax where possible.
+
+// @ tba example store
+
+
+
+
+
 
 
 ## 8. Outdated Language Constructs
