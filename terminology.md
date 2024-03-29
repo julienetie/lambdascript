@@ -1,0 +1,28 @@
+> ### (WIP)
+# LambdaScript Terminology
+- Functions
+  - Inheritance
+    - Polymorphic Functions
+    - Factory Functions
+    - Factory Objects
+    - Subtype Polymorphism
+  - Encapsulation
+  - Recursion
+    - Tail Optimised Recursion
+    - Linear-Tail Recursion
+  - Composition
+    - Compose
+    - Pipe
+  - Partial Application
+  - Currying
+  - Invocation Order
+  - Arrow Function /  Lambda Function
+  - Lambda Expression
+  - Closure
+  - Higher-order Function
+- Types
+  - None-value
+  - Falsy
+  - Truthy
+  - Final-value
+  - Type-Safeguard
