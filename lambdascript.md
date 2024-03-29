@@ -1,23 +1,37 @@
 > ### *(WIP)*
 # λ LambdaScript
-> ### A Vanilla JavaScript Standard for Modern Best Practices
+### A Vanilla JavaScript Standard for Modern Best Practices
 
-LambdaScript standard delineates clear conventions for crafting loosely-coupled JavaScript code using a procedural and partially-functional approach.
+> ### How to use this document
+> _LambdaScript is not a comprehensive standard and does not encompass all aspects of JavaScript. Instead, it focuses on a specific subset of JavaScript that can enhance or detract from the efficiency of software development. This not only makes development more pragmatic but it also aims to make the LambdaScript document more consumable for beginners and experienced JavaScript developers alike._
+>
+>> ## _Concerns and features not part of the LambdaScript standard are left to discretion_
+>
+> There are two strategies for implementing LambdaScript in your source code:
+> 1. **Strict LambdaScript**: All "imperative" and "canonical" conventions are strictly adhered to, while all "avoid" and "evade" features are considered obsolete.
+> 2. **Flexible LambdaScript**: There are cases where you may need to exercise exceptions, but "impertative" features are upheld.
+>
+>These strategies prioritize consistency and flexibility, acknowledging that various projects may present challenges stemming from dependencies, objective constraints, JavaScript runtimes, and possibly differences in opinions among colleagues and collaborators. The LambdaScript standard was designed with collaboration, productiviy and performance in mind.
+>
+>#### When not to use LambdaScript
+>LambdaScript is predomnantly for runtimes that support ECMAScript 2015 and above (ES6+). There are numerous JavaScript runtimes, some with only partial ES6 support. In such instances, it's crucial to exercise discretion to determine if LambdaScript will be beneficial. LambdaScript is not intended for legacy projects that utilize ECMAScript 5 (ES5) and earlier versions.
 
-### Goal
-LambdaScript aims to:
-- Establish a contemporary standard, excluding detrimental practices and misconceptions.
-- Eliminate practices that lead to brittle codebases.
-- Enhance productivity
-- Direct developers' attention towards meaningful paradigms.
-- Resolve the ambiguity in different problem-solving approaches in JavaScript.
-- Establish LambdaScript as a best practice reference for Vanilla JavaScript.
+### What does LambdaScript consist of?
+LambdaScript defines the following, all found within this document:
 
-### What is LambdaScript not
-- Not a programming language
-- Not a compiler
-- Not a full fledged functional programming specificaiton
-- Not a new syntax
+- A modern syntax style guide and linter setup
+- Conventions for specific JavaScript features
+- Essential Type Management
+- Practical Functional Programming principles
+- Conventions for JavaScript features to steer clear of or circumvent
+- The utility library, [lambdascript.js](#)
+
+### Why is Native JavaScript the Optimal Choice for JavaScript Runtimes?
+
+- **Fastest Reloads Possible**: Native JavaScript development often achieves reload speeds hundreds or thousands of times faster than compiled solutions that use Babel or TypeScript. 
+- **Ideal for Performance-Critical Development**: Optimization is nuanced. When working on performance-sensitive software, native JavaScript allows for more effective optimization strategies.
+- **Substantial Impact**: Your code directly influences the end result. Unlike types in TypeScript, which are often removed during compilation.
+- **Reduced Development Dependencies**: Native JavaScript can be written directly into a JavaScript runtime, resulting in a far simpler development setup when compared to typical compiled alternatives.
 
 ### Key 
 JavaScript adheres to numerous standards, spanning decades in its ecosystem. This is why LambdaScript cannot enforce all conventions as mandatory.
@@ -29,34 +43,6 @@ However, prioritization can be based on encountered use cases, left to your disc
 | <img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">            | Preferred unless unattainable             |
 | <img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">         | Refrain from encountering where possible  |
 | <img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">| Strongly encouraged to find a way to circumvent or escape |
-
-### Terminology
-- Functions
-  - Inheritance
-    - Polymorphic Functions
-    - Factory Functions
-    - Factory Objects
-    - Subtype Polymorphism
-  - Encapsulation
-  - Recursion
-    - Tail Optimised Recursion
-    - Linear-Tail Recursion
-  - Composition
-    - Compose
-    - Pipe
-  - Partial Application
-  - Currying
-  - Invocation Order
-  - Arrow Function /  Lambda Function
-  - Lambda Expression
-  - Closure
-  - Higher-order Function
-- Types
-  - None-value
-  - Falsy
-  - Truthy
-  - Final-value
-  - Type-Safeguard
 
 ### Areas of focus
 - [1\. Use of ECMAScript](#1-use-of-ecmascript)
@@ -684,9 +670,32 @@ LambdaScript follows these conventions for a global store:
 // @ tba example store
 
 
+// @spelling + grammar
+## 8. Development and distribution
+LambdaScirpt is a standard for supporting native JavaScript, this means that the code you write must be capabel of executing directly in your target runtime.
 
+### 8.x. Minification
+LambdaScript permits Minification since it does not alter the indended composition of your source code. Minification can also be beneficial for optimising parsing performance.
 
+### 8.x. Bundling without compiling
+LambdaScript allows for the batching or bundling of modules to reduce the number of modules, providing the source code contained is unchanged and no transpiling occures. 
 
+### 8.x. Unsupported development processes
+- Transpiling/ Compiling: Includes other languages or other javascript versions
+- Opinioated code formatters that are non-standard to LambdaScript
+- Excessive boilerplate code
+- Anything that alters the indended composition of source code.
+- Bunded code splitting: Code-splitting can occasionally result in duplicated shared dependencies as well as excessive boilerplate code.
+
+The below are development dependencies to evade from 
+- Babeljs [<img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">](#key)
+(Use libraries that uitlize babel but avoid babel for compiling your codebase)
+- Webpack [<img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">](#key)
+(Excessive boilerplate code, brittle configuration)
+- TypeScript [<img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">](#key)
+Avoid for compiling your codebase
+- Prettier [<img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">](#key)
+In no circumstance should prettier be used as it defeats the entire purpose of LambdaScript.
 
 
 ## 8. Outdated Language Constructs
