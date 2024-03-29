@@ -30,6 +30,33 @@ However, prioritization can be based on encountered use cases, left to your disc
 | <img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">         | Refrain from encountering where possible  |
 | <img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">| Strongly encouraged to find a way to circumvent or escape |
 
+### Terminology
+- Functions
+  - Inheritance
+    - Polymorphic Functions
+    - Factory Functions
+    - Factory Objects
+    - Subtype Polymorphism
+  - Encapsulation
+  - Recursion
+    - Tail Optimised Recursion
+    - Linear-Tail Recursion
+  - Composition
+    - Compose
+    - Pipe
+  - Partial Application
+  - Currying
+  - Invocation Order
+  - Arrow Function /  Lambda Function
+  - Lambda Expression
+  - Closure
+  - Higher-order Function
+- Types
+  - None-value
+  - Falsy
+  - Truthy
+  - Final-value
+  - Type-Safeguard
 
 ### Areas of focus
 - [1\. Use of ECMAScript](#1-use-of-ecmascript)
@@ -398,6 +425,9 @@ It could also be seen as potentially falsy if we expect:
 
 There isn't a clear-cut inverse rule. It's crucial never to assume that a dynamic value will always be of the type you expect.
 
+### 5.5 Use Void
+TBA
+
 ## 6. Arrow Functions 
 Arrow Functions in JavaScript allow for concise expression of lambda expressions, which are idiomatic to the core language. They provide a succinct syntax for defining anonymous functions, leveraging lambda expression concepts extensively.
 
@@ -638,6 +668,9 @@ Factory objects can be any custom object type:
 ## 7. Exception Handling
 TBA
 
+## 8. Global Store
+
+
 ## 8. Outdated Language Constructs
 This is a list of language constructs to either avoid or evade in JavaScript when adhering to LambdaScript standards. While there may be situations where avoiding or evading the use of an outdated language construct is challenging, it's recommended to de-emphasize its usage rather than considering it completely obsolete.
 
@@ -655,6 +688,10 @@ This is a list of language constructs to either avoid or evade in JavaScript whe
 
 ### 8.7 `function` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
 
+### 8.x `get` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+
+### 8.x `set` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+
 ### 8.8 `Object.freeze()` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
 
 ### 8.9 `Object.seal()` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
@@ -664,10 +701,25 @@ This is a list of language constructs to either avoid or evade in JavaScript whe
 ### 8.11 User defined `new` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
 
 ### 8.12 `this` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+The this keyword should be avoided as it promotes brittle coding styles, introducing multiple contexts that lead to challenging edge cases and exception handling for codebases of all sizes.
+
+> #### Rationale:
+> The use of context-based programming in JavaScript can lead to brittle code because it often relies on implicit dependencies and mutable state. This approach can make the code difficult to understand, maintain, and refactor, as changes in one part of the codebase can unexpectedly affect other parts due to the shared context.
+>
+> Additionally, context-based programming in JavaScript often involves tightly coupling different components or modules, making it challenging to isolate and test individual units of code. This lack of modularity can further contribute to brittleness, as changes to one module may inadvertently break functionality in other modules.
+>
+> Overall, the reliance on mutable state and implicit dependencies in context-based programming can make the codebase fragile and prone to unexpected behavior, making it harder to maintain and evolve over time.
+>>
+>> #### Alternative:
+>> LambdaScript advocates for the following alternatives to reliably share state across a codebase.
+>> - **[Global Store](#)**: tba
+>> - **State management**: tba
+>> - **Polymorphic Functions**: tba
+>> - **Encapsulation**: tba
 
 ### 8.13 `var` [<img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">](#key)
 The `var` keyword should no longer be used within ECMAScript 2015+ based codebase.
-
+>>
 [letLink]:https://caniuse.com/let
 [constLink]:https://caniuse.com/const
 > #### Rationale:
