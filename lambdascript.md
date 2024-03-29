@@ -704,7 +704,7 @@ The `var` keyword should no longer be used within ECMAScript 2015+ based codebas
 > - **Practical Functional Programming**: Utilize a subset of functional programming concepts without going overboard.
 > - **Practical Procedural Programming**: Also work in a procedural fashion and leverage the standard's constraints.
 > - **Consistency for Teams**: A standard for Vanilla JavaScript to increase consistency in codebases and aid code reviews.
-> - **A Minimalist Programming Style**: Lowers JavaScript's core verbosity to increase productivity, making it analogous to Golang, Lua, and Zig in terms of minimalism.
+> - **A Minimalist Programming Style**: Lowers JavaScript's core verbosity to increase productivity, making the fundamentals analogous to Golang, Lua, and Zig in terms of minimalism.
 > - **Native Usage**: Provides a strategy for native JavaScript development for modern JavaScript runtimes.
 > - **Valid JavaScript**: No new syntax to learn, no compilers.
 > - **Type Management Solution**: A general-purpose type-management standard.
