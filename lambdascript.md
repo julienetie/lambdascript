@@ -716,7 +716,17 @@ This is a list of language constructs to either avoid or evade in JavaScript whe
 
 ### 8.10 `prototype` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
 
-### 8.11 User defined `new` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+### 8.11 `new` user-defined-constructor [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+The `new` keyword used with a user-defined-constructor should be avoided as it introduces context-based programming. 
+
+> #### Rationale:
+> Using new with user-defined constructors in JavaScript can lead to unexpected behavior and complexities due to prototypal inheritance and potential pitfalls. While constructors are a common approach, alternatives like factory functions offer clearer and safer ways to create objects. 
+>>
+>> #### Alternative:
+>> The following alternative strategies are recommended for achieving a similar outcome to creating object instances.
+>> - Currying: TBA
+>> - Partial Application: TBA
+>> - Factory functions: TBA
 
 ### 8.12 `this` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
 The this keyword should be avoided as it promotes brittle coding styles, introducing multiple contexts that lead to challenging edge cases and exception handling for codebases of all sizes.
