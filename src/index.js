@@ -33,6 +33,23 @@ export const tail = {
     }
 }
 
+/**
+ * Alias for `tail.trampoline` function.
+ * @memberof tail
+ * @function
+ * @name toc
+ * @type {Function}
+ */
+export const toc = tail.trampoline
+
+/**
+ * Alias for `tail.linear` function.
+ * @memberof tail
+ * @function
+ * @name ltr
+ * @type {Function}
+ */
+export const ltr = tail.linear
 
 /**
  * Composes multiple functions into a single function.
@@ -41,7 +58,6 @@ export const tail = {
  * @returns {Function} A new function that represents the composition of the provided functions.
  */
 export const comp = (...fns) => arg => fns.reduceRight((acc, fn) => fn(acc), arg)
-
 
 /**
  * Chains multiple functions, applying them sequentially from left to right.
