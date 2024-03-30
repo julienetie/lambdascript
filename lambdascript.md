@@ -1,5 +1,10 @@
 > ### *(WIP)*
+
+<img src="https://github.com/julienetie/lambdascript/assets/7676299/81bd638a-1c90-4596-a48c-0a124fef1d68" alt="LambdaScript logo" width="250">
+
 # λ LambdaScript
+
+
 ### A Vanilla JavaScript Standard for Modern Best Practices
 
 > ### How to use this document
@@ -362,7 +367,7 @@ value === undefined
 ```
 #### isNonValue (NaN, null or undefined)
 ```javascript
-!(value === undefined || value === null || Number.isNaN(value))
+value === undefined || value === null || Number.isNaN(value)
 ```
 
 > ### Arbritrary type-checking
@@ -669,33 +674,25 @@ LambdaScript follows these conventions for a global store:
 
 // @ tba example store
 
-
-// @spelling + grammar
 ## 8. Development and distribution
-LambdaScirpt is a standard for supporting native JavaScript, this means that the code you write must be capabel of executing directly in your target runtime.
+LambdaScript is expected to run directly on your target runtime without the aid of any tooling. This is a recommended reference point that allows for: 
+- Reduced risk of vendor lock-in
+- Increased flexibility for future migrations
+- Improved predictability
+- Can assist in rectifying issues in production builds
 
 ### 8.x. Minification
 LambdaScript permits Minification since it does not alter the indended composition of your source code. Minification can also be beneficial for optimising parsing performance.
 
 ### 8.x. Bundling without compiling
-LambdaScript allows for the batching or bundling of modules to reduce the number of modules, providing the source code contained is unchanged and no transpiling occures. 
+The batching and bundling of modules can help in areas where large numbers of modules are counter-productive for resource loading. It's advisable that, when doing so, the source code contained remains unchanged.
 
-### 8.x. Unsupported development processes
-- Transpiling/ Compiling: Includes other languages or other javascript versions
-- Opinioated code formatters that are non-standard to LambdaScript
-- Excessive boilerplate code
-- Anything that alters the indended composition of source code.
-- Bunded code splitting: Code-splitting can occasionally result in duplicated shared dependencies as well as excessive boilerplate code.
-
-The below are development dependencies to evade from 
-- Babeljs [<img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">](#key)
-(Use libraries that uitlize babel but avoid babel for compiling your codebase)
-- Webpack [<img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">](#key)
-(Excessive boilerplate code, brittle configuration)
-- TypeScript [<img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">](#key)
-Avoid for compiling your codebase
-- Prettier [<img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">](#key)
-In no circumstance should prettier be used as it defeats the entire purpose of LambdaScript.
+### 8.x. Undesirable development processes
+- Transpiling/Compiling: Involves integrating other languages or versions of JavaScript.
+- Opinionated code formatters that deviate from LambdaScript standards.
+- Excessive boilerplate code.
+- Any changes that disrupt the intended structure of the source code.
+- Bundled code splitting: Although code-splitting can be beneficial, it may sometimes lead to duplicated shared dependencies and unnecessary boilerplate code.
 
 
 ## 8. Outdated Language Constructs
