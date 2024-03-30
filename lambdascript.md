@@ -675,7 +675,7 @@ LambdaScript follows these conventions for a global store:
 // @ tba example store
 
 ## 8. Development and distribution
-LambdaScript is expected to run directly on your target runtime without the aid of any tooling. This is a recommended reference point that allows for: 
+In theory, the LambdaScript you write should be capable of run directly on your target runtime, with or without the aid of development tooling. This is a recommended reference point that allows for: 
 - Reduced risk of vendor lock-in
 - Increased flexibility for future migrations
 - Improved predictability
