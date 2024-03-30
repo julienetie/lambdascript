@@ -4,40 +4,39 @@
  */
 export const empty = ''
 
-
 /**
  * A utility object containing functions related to tail recursion.
  * @namespace
  */
 export const tail = {
-    /**
+  /**
     * Executes a callback function in a linear tail-recursive manner.
     * @param {Function} callback - The callback function to be executed.
     * @param {...*} args - The parameters to be passed to the callback function.
     * @returns {*} - The result of the callback function execution.
     */
-    linear: (callback, ...args) => {
-        let value = callback(...args)
-        while (typeof value === 'function') value = value()
-        return value
-    },
-    /**
+  linear: (callback, ...args) => {
+    let value = callback(...args)
+    while (typeof value === 'function') value = value()
+    return value
+  },
+  /**
      * Executes a function with tail call optimization (TCO) using trampolining.
      * @param {Function} callback - The function to execute with TCO.
      * @returns {Function} - A trampoline function that accepts any number of arguments.
      */
-    trampoline: callback => (...args) => {
-        /**
+  trampoline: callback => (...args) => {
+    /**
          * Helper function to update the arguments for the next iteration.
          * @param {...*} nextArgs - The new parameters for the next iteration.
          */
-        const newArgs = (...nextArgs) => void (args = nextArgs)
+    // const newArgs = (...nextArgs) => void (args = nextArgs)
 
-        let result
+    // let result
 
-        while (result === undefined) result = callback(newArgs, ...args)
-        return result
-    }
+    // while (result === undefined) result = callback(newArgs, ...args)
+    // return result
+  }
 }
 
 /**
@@ -79,7 +78,7 @@ export const pipe = (...fns) => arg => fns.reduce((acc, fn) => fn(acc), arg)
  * @namespace
  */
 export const safe = {
-    /**
+  /**
      * Prevent non-string values for the final-value.
      * If the value is already a string, returns it.
      * If a placeholder function is provided, returns the result of the function if it returns a string.
@@ -88,16 +87,16 @@ export const safe = {
      * @param {string|function} [placeholder=empty] - The placeholder value or function.
      * @returns {string} The converted string value.
      */
-    str: (value, placeholder = empty) => {
-        if(typeof value === 'string') return value
-        if(typeof placeholder === 'function') {
-            const newPlaceholderValue = placeholder(value)
-            return typeof newPlaceholderValue === 'string' ? newPlaceholderValue : empty 
-        }
-        return placeholder
-    },
+  str: (value, placeholder = empty) => {
+    if (typeof value === 'string') return value
+    if (typeof placeholder === 'function') {
+      const newPlaceholderValue = placeholder(value)
+      return typeof newPlaceholderValue === 'string' ? newPlaceholderValue : empty
+    }
+    return placeholder
+  },
 
-    /**
+  /**
      * Prevent non-numeric values for the final-value.
      * If the value is already a number and not NaN, returns it.
      * If a placeholder function is provided, returns the result of the function if it returns a number and not NaN.
@@ -106,16 +105,16 @@ export const safe = {
      * @param {number|function} [placeholder=empty] - The placeholder value or function.
      * @returns {number} The converted numeric value.
      */
-    numeric: (value, placeholder = empty) => {
-        if(typeof value === 'number' && !Number.isNaN(value)) return value
-        if(typeof placeholder === 'function') {
-            const newPlaceholderValue = placeholder(value)
-            return typeof newPlaceholderValue === 'number' && !Number.isNaN(newPlaceholderValue) ? newPlaceholderValue : empty 
-        }
-        return placeholder   
-    },
+  numeric: (value, placeholder = empty) => {
+    if (typeof value === 'number' && !Number.isNaN(value)) return value
+    if (typeof placeholder === 'function') {
+      const newPlaceholderValue = placeholder(value)
+      return typeof newPlaceholderValue === 'number' && !Number.isNaN(newPlaceholderValue) ? newPlaceholderValue : empty
+    }
+    return placeholder
+  },
 
-    /**
+  /**
      * Prevent non-integer values for the final-value.
      * If the value is already an integer, returns it.
      * If a placeholder function is provided, returns the result of the function if it returns an integer.
@@ -124,14 +123,14 @@ export const safe = {
      * @param {number|function} [placeholder=empty] - The placeholder value or function.
      * @returns {number} The converted integer value.
      */
-    int: (value, placeholder = empty) => {
-        if(Number.isInteger(value)) return value
-        if(typeof placeholder === 'function') {
-            const newPlaceholderValue = placeholder(value)
-            return Number.isInteger(newPlaceholderValue) ? newPlaceholderValue : empty 
-        }
-        return placeholder   
+  int: (value, placeholder = empty) => {
+    if (Number.isInteger(value)) return value
+    if (typeof placeholder === 'function') {
+      const newPlaceholderValue = placeholder(value)
+      return Number.isInteger(newPlaceholderValue) ? newPlaceholderValue : empty
     }
+    return placeholder
+  }
 }
 
 /**
@@ -220,4 +219,4 @@ export const isSymbol = value => typeof value === 'symbol'
  * @param {*} value - The value to check.
  * @returns {boolean} Returns true if the value is not undefined, null, or NaN, else false.
  */
-export const isNonValue = value => !(value === undefined || value === null || Number.isNaN(value))
+export const isNonValue = value => value === undefined || value === null || Number.isNaN(value)
