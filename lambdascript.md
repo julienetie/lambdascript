@@ -659,6 +659,19 @@ Factory objects can be any custom object type:
 ## 7. Exception Handling
 TBA
 
+## x. Memory Resource and Reference Management
+//@ WeakRef
+//@ FinalizationRegistry
+// Use only where necessary
+
+## x. Templating
+//@ Use template literals for templating DOM Nodes
+//@ Use template literals for server side HTML templates
+//@ Use tagged template functions advanced templating 
+//@ Avoid handlebars + others
+
+
+
 ## 8. Global Store
 Global state in JavaScript poses challenges due to its high mutability. ECMAScript has evolved to mitigate these challenges by introducing stricter constructs.
 
