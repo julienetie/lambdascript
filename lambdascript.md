@@ -676,10 +676,10 @@ LambdaScript follows these conventions for a global store:
 
 ## 8. Development and distribution
 In theory, the LambdaScript you write should be capable of run directly on your target runtime, with or without the aid of development tooling. This is a recommended reference point that allows for: 
-- Reduced risk of vendor lock-in
-- Increased flexibility for future migrations
-- Improved predictability
-- Can assist in rectifying issues in production builds
+- Reduced risk of vendor lock-in.
+- Increased flexibility for future migrations.
+- Improved predictability,
+- Can assist in rectifying issues in build pipelines.
 
 ### 8.x. Minification
 LambdaScript permits Minification since it does not alter the indended composition of your source code. Minification can also be beneficial for optimising parsing performance.
