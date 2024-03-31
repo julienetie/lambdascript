@@ -123,7 +123,7 @@ Before reverting to legacy syntax, it's crucial to ascertain whether the platfor
 
 [JavaScript Standard Style](https://standardjs.com/)
 
-LambdaScript primarily adheres to the _JavaScript Standard Style_, renowned for its thoughtful design and high productivity, making it a fitting style guide for modern JavaScript codebases.
+LambdaScript primarily adheres to the _JavaScript Standard Style_, renowned for its thoughtful design, making it a fitting style guide for modern JavaScript codebases.
 
 [asiLink]: https://tc39.es/ecma262/#sec-automatic-semicolon-insertion
 
