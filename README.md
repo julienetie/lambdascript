@@ -6,6 +6,7 @@
 ### A Vanilla JavaScript Standard for Modern Best Practices
 - [The LambdaScript Standard (Unversioned)](https://github.com/julienetie/lambdascript/blob/main/lambdascript.md)
 - [The LambdaScript Utility Library](https://github.com/julienetie/lambdascript/blob/main/lambdascript.js)
+- [FAQ](https://github.com/julienetie/lambdascript/blob/main/FAQ.md)
 > - [The LambdaScript Standard - Shortform](#) - TBA
 > - [The LambdaScript CheatSheet](#) - TBA
 > - [LambdaScript By Example](#) - TBA
