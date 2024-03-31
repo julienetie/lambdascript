@@ -17,6 +17,24 @@
 </span>
 
 ## Contributing
-> TBA
+### Code of conduct
+_It's very simple: Be respectful to everyone, don't expect and don't belittle. Also, do not gang up on individuals for any reason, try to resolve differences maturely._
+
+#### Spec: Spelling and Grammar
+Submit a pull request for any necessary improvements or corrections without prior approval.
+
+#### Spec: Add, remove or change conventions
+Please create a [new issue]([url](https://github.com/julienetie/lambdascript/issues)) and detail the additions, removals or changes you'd like to see.
+
+#### Spec: Localization
+Please create a [new issue]([url](https://github.com/julienetie/lambdascript/issues)) detailing which locale you are able to contribute to.
+
+#### Codebase: Fixes
+Please raise a pull request and or a [new issue]([url](https://github.com/julienetie/lambdascript/issues)).
+
+#### Codebase: Changes
+Please create a [new issue]([url](https://github.com/julienetie/lambdascript/issues)) and detail the additions, removals or changes you'd like to see.
+
+
 
 MIT © Wavefront, Julien Etienne 2024
