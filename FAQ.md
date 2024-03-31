@@ -22,3 +22,12 @@
 > - **Native Usage**: Provides a strategy for native JavaScript development for modern JavaScript runtimes.
 > - **Valid JavaScript**: No new syntax to learn, no compilers.
 > - **Type Management Solution**: A general-purpose type-management standard.
+
+### What is the difference between LambdaScript and typical JavaScript
+> LambdaScript is essentially a more productive subset of JavaScript, and offers a consistent and thoughtful style guide for developers and teams to adhere to.
+> Productivity can be subjective, but the above suggestion can be supported by the following:
+
+> A LambdaScript codebase typically results in less code.
+> LambdaScript codebases exhibit reduced verbosity due to its nature as a JavaScript subset.
+> LambdaScript promotes and maintains more consistent coding practices.
+> LambdaScript codebases are generally less tightly-coupled compared to class-based approaches.
