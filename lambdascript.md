@@ -50,58 +50,73 @@ However, prioritization can be based on encountered use cases, left to your disc
 | <img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">| Strongly encouraged to find a way to circumvent or escape |
 
 ### Areas of focus
-- [1\. Use of ECMAScript](#1-use-of-ecmascript)
-  - [1.1. The state of ECMAScript](#11-the-state-of-ecmascript)
-  - [1.2. Working with ECMAScript 2015, ECMAScript 2016 and EcmaScript Next](#12-working-with-ecmascript-2015-ecmascript-2016-and-ecmascript-next)
-  - [1.3. Polyfills](#13-polyfills)
-  - [1.4. Exceptions](#14-exceptions)
- 
-- [2\. Standard JavaScript](#2-javascript-standard-style)
-  - [2.1. Automatic Semicolon Insertion](#21-automatic-semicolon-insertion)
-  - [2.2. Extending Standard JavaScript to the Decoupled Specification](#22-extending-standard-javascript-to-the-decoupled-specification)
-    - [2.2.1. Allow Switch Statement Fallthrough](#221-allow-switch-statement-fallthrough)
-    - [2.2.2. Enforce Single Quotes](#222-enforce-single-quotes)
-    - [2.2.3. Allow Void](#223-allow-void)
-<!--
-- [3\. Modules]
-  - [3.1. Use ES Modules](#31-use-es-modules)
-  - [3.2. Use the .js extension]
-  - [3.3. Use the ModuleSpecifier Query String]
+ - 1\. [**Adopting Native ECMAScript Next**](#1-adopting-native-ecmascript-next)
+     
+     - 1.1. [The Current State of ECMAScript](#11-the-current-state-of-ecmascript)
+     
+     - 1.2. [Determining Browser and Platform Support for ECMAScript](#12determining-browser-and-platform-support-for-ecmascript)
+     
+     - 1.3. [Polyfill As Needed](#13-polyfill-as-needed-)
+     
+     - 1.4. [Utilizing ECMAScript 2015 and Beyond](#14-utilizing-ecmascript-2015-and-beyond-)
+       
+- Extended JavaScript Standard Style
 
-- [4\. Variables]
-  - [4.1. Use const]
-  - [4.2. Use WeakRef for garbage collectable objects]
+- Modules
 
- - [5\. Dynamic Type Management] 
--->
+- Variables
+
+- Types
+  
+- Void 
+
+- Conditional Statements
+
+- Lambda Functions
+
+- Exception Handling
+
+- State Management
+
+- Memory Resource and Reference Management
+
+- Templating
+
+- Development and Distribution
+
+- Avoidable and Evadable Language Constructs
 
 
+[ecmaInt]: https://ecma-international.org
+[evergreen]: https://www.w3.org/2001/tag/doc/evergreen-web
+[es6]: https://262.ecma-international.org/6.0/
+[es7]: https://262.ecma-international.org/7.0/
+[polyfills]: https://www.w3.org/2001/tag/doc/polyfills/
+## 1. Adopting Native ECMAScript Next
+JavaScript implements the ECMAScript standardized scripting language specification. ECMAScript specifications are maintained by [Ecma International][ecmaInt], a standards organization, with input from various stakeholders in the industry.
 
-[ecmaIntLink]: https://ecma-international.org
+New versions of ECMAScript are released periodically. These updates introduce new features, syntax, and improvements to the language. ECMAScript Next embodies [ECMAScript 2015 (ES6)](#es6) and subsequent iterations, effectively establishing it as an evolving standard.
 
-## 1. Use of ECMAScript 
-ECMAScript is a standardized scripting language specification implemented by JavaScript. ECMAScript specifications are maintained by [Ecma International][ecmaIntLink], a standards organization, with input from various stakeholders in the industry. 
+### 1.1. The Current State of ECMAScript
+> ## _Given its extensive global support, ECMAScript obviates the necessity for compilation or transpilation as a prerequisite for JavaScript development_
 
-New versions of ECMAScript are released periodically. These updates introduce new features, syntax, and improvements to the language.
+Several years preceding the introduction of LambdaScript standard, major web browsers and JavaScript runtimes had already demonstrated either complete or near-complete support for ECMAScript 2015 (ES6) and [ECMAScript 2016 (ES7)](#es7), While also demonstrating robust support for forthcoming ECMAScript Next standards. Expanding on this, less than 1% of all major browsers in usage today are not [evergreen](evergreen). With the broad adoption of recent ECMAScript versions across modern browsers, the need for transpilation to ES5 has diminished significantly.
 
-### 1.1. The state of ECMAScript
-Several years preceding the introduction of LambdaScript standard, major web browsers and JavaScript runtimes had already demonstrated either complete or near-complete support for ECMAScript 2015 (ES6) and ECMAScript 2016 (ES7), While also demonstrating robust support for forthcoming ECMAScript Next standards. Expanding on this, less than 1% of all browsers in usage today are not evergreen.
-
-- Given widespread support for recent ECMAScript versions in modern browsers, the need for transpilation to ES5 has diminished significantly.
 - Use polyfills judiciously, giving priority to essential missing features. Opt for targeted polyfills instead of bundled polyfills when possible.
 - Reserve ECMAScript compilation for rare edge cases where it's essential, minimizing its usage unless absolutely warranted.
 
-### 1.2. Working with ECMAScript 2015, ECMAScript 2016 and EcmaScript Next
-Fundamental ECMAScript features enjoy extensive support across major browsers and JavaScript platforms, guaranteeing compatibility with raw ECMAScript 2015 and subsequent versions at runtime, thereby obviating the necessity for compilation. To verify the broad adoption of a feature, consult the following resources:
+### 1.2.Determining Browser and Platform Support for ECMAScript
+Fundamental ECMAScript Next features enjoy extensive support across major browsers and JavaScript platforms, guaranteeing compatibility with raw ECMAScript 2015 and subsequent versions at runtime, thereby obviating the necessity for compilation. To verify the broad adoption of a feature, consider consulting the following resources:
 - <a href="https://caniuse.com" target="_blank">Can I Use</a>
 - <a href="https://developer.mozilla.org" target="_blank">MDN Web Doc</a>
 - <a href="https://compat-table.github.io/compat-table/es6" target="_blank">ECMAScript 6 compatibility table</a>
+- <a href="https://nodejs.org/en/learn/getting-started/ecmascript-2015-es6-and-beyond" target="_blank" >Node.js:ECMAScript 2015 (ES6) and beyond</a>
 
-### 1.3. Polyfill manually [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
-Polyfills should be included manually as necessary, rather than relying on polyfill libraries that contain multiple polyfills. It's also discouraged to use invalid syntax to support non-standard features. Excessive or non-standard syntax should be avoided as it's unlikely to enhance performance, maintainability, or the user experience.
+### 1.3. Polyfill As Needed [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+[Polyfills](#polyfills) should be included manually as necessary, rather than relying on polyfill solutions that can sometimes include several unecessary polyfills. It's also discouraged to use invalid syntax to support non-standard features. Excessive or non-standard syntax should be avoided as it's unlikely to enhance performance, maintainability, or the user experience.
 
-### 1.4. Use ECMAScript 2015 and above [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
-Before reverting to legacy syntax, it's crucial to ascertain whether the platform you're developing for lacks sufficient support for ECMAScript 2015. Recognizing the limitations of your development platforms is paramount, as embracing newer standards can lead to significantly enhanced productivity.
+### 1.4. Utilizing ECMAScript 2015 and Beyond [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+Before reverting to legacy syntax, it's crucial to ascertain whether the platform you're developing for lacks sufficient support for ECMAScript 2015. Recognizing the limitations of your development platforms is paramount, as embracing newer standards can lead to significantly enhanced productivity and performance.
 
 ## 2. JavaScript Standard Style with LambdaScript rules 
 [![image](https://github.com/julienetie/decoupled-javascript/assets/7676299/b40f8fe6-2688-499e-bb53-ae8aacb2f5a6)](https://standardjs.com/)
