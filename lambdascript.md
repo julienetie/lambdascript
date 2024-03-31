@@ -56,9 +56,9 @@ However, prioritization can be based on encountered use cases, left to your disc
      
      - 1.2. [Determining Browser and Platform Support for ECMAScript](#12determining-browser-and-platform-support-for-ecmascript)
      
-     - 1.3. [Polyfill As Needed](#13-polyfill-as-needed-)
+     - 1.3. [Polyfill As Needed](#13-polyfill-as-needed-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
      
-     - 1.4. [Utilizing ECMAScript 2015 and Beyond](#14-utilizing-ecmascript-2015-and-beyond-)
+     - 1.4. [Utilizing ECMAScript 2015 and Beyond](#14-utilizing-ecmascript-2015-and-beyond)
        
 - Extended JavaScript Standard Style
 
@@ -115,7 +115,7 @@ Fundamental ECMAScript Next features enjoy extensive support across major browse
 ### 1.3. Polyfill As Needed [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 [Polyfills](#polyfills) should be included manually as necessary, rather than relying on polyfill solutions that can sometimes include several unecessary polyfills. It's also discouraged to use invalid syntax to support non-standard features. Excessive or non-standard syntax should be avoided as it's unlikely to enhance performance, maintainability, or the user experience.
 
-### 1.4. Utilizing ECMAScript 2015 and Beyond [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+### 1.4. Utilizing ECMAScript 2015 and Beyond
 Before reverting to legacy syntax, it's crucial to ascertain whether the platform you're developing for lacks sufficient support for ECMAScript 2015. Recognizing the limitations of your development platforms is paramount, as embracing newer standards can lead to significantly enhanced productivity and performance.
 
 ## 2. JavaScript Standard Style with LambdaScript rules 
