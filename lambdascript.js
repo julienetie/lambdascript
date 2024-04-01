@@ -220,3 +220,136 @@ export const isSymbol = value => typeof value === 'symbol'
  * @returns {boolean} Returns true if the value is not undefined, null, or NaN, else false.
  */
 export const isNonValue = value => value === undefined || value === null || Number.isNaN(value)
+
+
+
+const createType = type => Symbol(type)
+
+export const string = createType('string')
+export const array = createType('array')
+export const bigint = createType('bigint')
+export const boolean = createType('boolean')
+export const _function = createType('_function')
+export const integer = createType('integer')
+export const nan = createType('nan')
+export const numeric = createType('numeric')
+export const _null = createType('_null')
+export const object = createType('object')
+export const symbol = createType('symbol')
+export const _undefined = createType('_undefined')
+export const nonValue = createType('nonValue')
+export const anyNumber = createType('anyNumber')
+export const anyObject = createType('anyObject')
+
+
+
+
+const typeCheckers = {
+  string: isString,
+  array: isArray,
+  bigint: isBigInt,
+  boolean: isBoolean,
+  _function: isFunction,
+  integer: isInteger,
+  nan: isNaN,
+  numeric: isNumeric,
+  null: value => value === null,
+  object: isObject,
+  symbol: isSymbol,
+  undefined: value => value === undefined,
+  nonvalue: isNonValue,
+  anynumber: value => typeof value === 'number',
+  anyobject: value => typeof value === 'object',
+}
+
+
+
+
+/**
+ * Exc function checks if a value matches specified types.
+ * @param {*} value - The value to be checked.
+ * @param {...any} types - The types to be checked against.
+ * @returns {Object} An object with error handling methods and a flag indicating whether an error occurred.
+ */
+export const exc = (value, ...types) => {
+  let results // Variable to store results
+  let err = true // Flag to indicate if an error occurred
+
+  // Loop through the specified types
+  for (let type of types) {
+    let checker
+
+    // Determine the checker based on the type
+    switch (type) {
+      case undefined:
+        checker = 'undefined'
+        break
+      case null:
+        checker = 'null'
+        break
+      default:
+        checker = type.description
+    }
+
+    // Check if the value matches the current type
+    if (!typeCheckers[checker](value)) {
+      // Prepare the results with relevant information
+      results = [
+        value,
+        type.description,
+        value === null ? null : value === undefined ? undefined : typeof value,
+        ...types.map(type => type.description)
+      ]
+
+      err = false // Set error flag to false since an error occurred
+      break // Exit the loop once an error is found
+    }
+  }
+
+  // Return an object with error handling methods
+  return {
+    /**
+     * Error handling method to log an error message.
+     * @param {Function} message - Function to generate error message.
+     * @returns {boolean} True if no error occurred, otherwise false.
+     */
+    error: message => {
+      if (results === undefined) {
+        return true // Return true if no error occurred
+      }
+      const messageString = message(results) // Generate error message
+      console.error(messageString) // Log error message
+      return false // Return false to indicate an error
+    },
+    /**
+     * Error handling method to throw a TypeError.
+     * @param {Function} message - Function to generate error message.
+     * @returns {boolean} True if no error occurred, otherwise false.
+     */
+    Error: message => {
+      if (results === undefined) {
+        return true // Return true if no error occurred
+      }
+      const messageString = message(results) // Generate error message
+      throw new TypeError(messageString) // Throw TypeError
+    },
+    /**
+     * Error handling method to log a warning message.
+     * @param {Function} message - Function to generate warning message.
+     * @returns {boolean} True if no error occurred, otherwise false.
+     */
+    warn: message => {
+      if (results === undefined) {
+        return true // Return true if no error occurred
+      }
+      const messageString = message(results) // Generate warning message
+      console.warn(messageString) // Log warning message
+      return false // Return false to indicate a warning
+    },
+    /**
+     * Flag indicating whether an error occurred.
+     * @type {boolean}
+     */
+    err // Return error flag
+  }
+}
