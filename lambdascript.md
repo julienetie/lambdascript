@@ -73,9 +73,14 @@ However, prioritization can be based on encountered use cases, left to your disc
      - 2.2. [Use Automatic Semicolon Insertion](#22-use-automatic-semicolon-insertion-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 
      - 2.3. [JSDoc Type Checking](#23-jsdoc-type-checking)
+       
 - 3\. [**Modules**](#modules)
 
-     - 3.1. [Use ES Modules](#use-es-modules-) 
+     - 3.1. [Use ES Modules](#use-es-modules-)
+ 
+     - 3.2. [Use the .js Extension](#32-use-the-js-extension-)
+     
+     - 3.3. [Using Import Maps for Browser Development](#33-using-import-maps-for-browser-development-)
 
 - Variables
 
@@ -271,12 +276,12 @@ Embracing ES modules in JavaScript is crucial for several reasons:
 - Clear Dependencies: Reason about module dependencies with ease thanks to the static dependency graph.
 - Future-Proof: Stay ahead of the curve by using ES modules, which align with the future of JavaScript.
 
-### 3.2 Use the .js extension [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+### 3.2 Use the .js Extension [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 The ".mjs" file extension was introduced to clearly distinguish files containing ECMAScript Modules (ES modules) syntax from those containing CommonJS module syntax, which typically use the ".js" extension.
 
 However, with the increasing adoption and support for ES modules, the necessity to explicitly differentiate between the two module strategies diminishes. As ES modules become more prevalent, there will likely be little practical benefit in enforcing this distinction.
 
-### 3.3. Use Import Maps [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+### 3.3. Using Import Maps for Browser Development [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 Import Maps offer a streamlined way to associate module-specifiers (URLs) with designated names there are several benefits to using Import Maps:
 
 - Shorthand module names: Simplify referencing modules across your site by using shorthand names instead of full URLs.
