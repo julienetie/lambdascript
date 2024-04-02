@@ -358,16 +358,3 @@ export const exc = (value, ...types) => {
     err // Return error flag
   }
 }
-
-
-const test = value => value * 6000 
-
-function ggg (hello){
-  console.log(hello)
-
-
-  return (what) => {
-  }
-}
-
-ggg()
