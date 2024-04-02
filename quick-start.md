@@ -48,7 +48,7 @@ _./package.json_
 ...
 }
 ```
-### 4. Enable ES Modules
+### 4. Enable ES Modules for Node.js
 Enable ES module for your node.js module system
 _./package.json_
 ```javascript
