@@ -61,8 +61,18 @@ However, prioritization can be based on encountered use cases, left to your disc
      
      - 1.4. [Utilizing ECMAScript 2015 and Beyond](#14-utilizing-ecmascript-2015-and-beyond)
        
-- Extended JavaScript Standard Style
+- 2\. [**LambdaScript Linting and Commenting**](#2-lambdascript-linting-and-commenting)
+     
+     - 2.1. [Use Extended JavaScript Standard Style](#21-use-extended-javascript-standard-style-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+          - 2.1.1. [Allow Switch Statement Fallthrough](#211-allow-switch-statement-fallthrough-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+      
+          - 2.1.2. [Single Quotes](#212-single-quotes)
+      
+          - 2.1.3. [Allow Void](#213-allow-void-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+            
+     - 2.2. [Use Automatic Semicolon Insertion](#22-use-automatic-semicolon-insertion-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 
+     - 2.3. [JS Docs Type Checking](#23-js-docs-type-checking)
 - Modules
 
 - Variables
@@ -119,32 +129,17 @@ Fundamental ECMAScript Next features enjoy extensive support across major browse
 ### 1.4. Utilizing ECMAScript 2015 and Beyond
 Before reverting to legacy syntax, it's crucial to ascertain whether the platform you're developing for lacks sufficient support for ECMAScript 2015. Recognizing the limitations of your development platforms is paramount, as embracing newer standards can lead to significantly enhanced productivity and performance.
 
-## 2. JavaScript Standard Style with LambdaScript rules 
+## 2. LambdaScript Linting and Commenting
+LambdaScript strives to ensure consistency across projects, whether developed by individuals or sizable teams. While documentation serves as a valuable resource, enforcing coding styles is essential to enhancing development speeds and minimizing the need for extensive code reviews. Below are the tools and guides that LambdaScript has adopted to facilitate the maintenance of coding conventions.
+
+### 2.1. Use Extended JavaScript Standard Style [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+
 [![image](https://github.com/julienetie/decoupled-javascript/assets/7676299/b40f8fe6-2688-499e-bb53-ae8aacb2f5a6)](https://standardjs.com/)
 
 [JavaScript Standard Style](https://standardjs.com/)
 
 LambdaScript primarily adheres to the _JavaScript Standard Style_, renowned for its thoughtful design, making it a fitting style guide for modern JavaScript codebases.
-
-[asiLink]: https://tc39.es/ecma262/#sec-automatic-semicolon-insertion
-
-### 2.1. Use Automatic Semicolon Insertion [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
-[Automatic Semicolon Insertion](asiLink) (ASI) is a feature of ECMAScript often misconstrued in discussions about the necessity of semicolons. To truly grasp this capability, it's crucial to understand the following:
-
-- ASI is an integral part of the [ECMAScript standard](asiLink) and is not a language mistake as often assumed.
-- Valid Source code is not responsible for minification; instead, minifiers tokenize semicolons independently.
-- ASI does not necessarily insert missing semicolons at the end of a line.
-
-The last point is frequently misunderstood. ASI doesn't handle all semicolon insertions but **specifically ensures semicolons are inserted at the end of JavaScript sentences** where necessary.
-
-In JavaScript, a sentence typically refers to a complete statement or expression that performs a specific action or computation. LambdaScript embraces ASI, as advocated by the JavaScript Standard Style.
-
-
-In practice, ASI in JavaScript behaves similarly to programming languages that don't rely on end of sentence semicolons such as Golang, Ruby, and Swift, where semicolons may only be necessary in non-end-of-sentence scenarios.
-
-### 2.2. Extending Standard JavaScript to support LambdaScript [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
-
-In certain scenarios, the JavaScript Standard Style (JSS) may not fully align with the principles of LambdaScript. However, JSS offers flexibility by allowing extensions to accommodate such variations. 
+In certain scenarios, the JavaScript Standard Style (JSS) may not fully align with LambdaScript's principles. Therefore, it's necessary to adjust the eslint configuration to better align with LambdaScript's criteria.
 
 Below is the LambdaScript extension for [ESLint](https://eslint.org/docs/latest/use/configure/configuration-files-new):
 
@@ -190,7 +185,9 @@ export default [
   }
 ]
 ```
-#### 2.2.1 Allow Switch Statement Fallthrough
+
+#### 2.1.1 Allow Switch Statement Fallthrough [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+
 ```json
 {
     "rules": {
@@ -205,7 +202,7 @@ Fallthrough entails the sequential execution of subsequent CaseClause blocks unt
 In the context of LambdaScript, fallthrough is perceived as a valuable feature.
 
 
-#### 2.2.2 Enforce Single Quotes
+#### 2.1.2 Single Quotes
 
 ```json
 {
@@ -219,7 +216,8 @@ In the context of LambdaScript, fallthrough is perceived as a valuable feature.
 ```
 Utilizing single quotes in JavaScript primarily aligns with the preference of LambdaScript for maintaining consistency throughout codebases. However, it's essential to recognize that this choice is largely discretionary, and adhering to it is not a hard rule. The above configuration snippet tells ESLint to enforce the use of single quotes (') for strings in your code with an exception for template literals (backticks ``)
 
-#### 2.2.3 Allow Void
+#### 2.1.3 Allow Void [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+
 ```json
 {
     "rules": {
@@ -235,6 +233,25 @@ const d = a(console.log,5) // Logs 25
 
 console.log(d) // Logs undefined
 ```
+
+[asiLink]: https://tc39.es/ecma262/#sec-automatic-semicolon-insertion
+### 2.2. Use Automatic Semicolon Insertion [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+[Automatic Semicolon Insertion](asiLink) (ASI) is a feature of ECMAScript often misconstrued in discussions about the necessity of semicolons. To truly grasp this capability, it's crucial to understand the following:
+
+- ASI is an integral part of the [ECMAScript standard](asiLink) and is not a language mistake as often assumed.
+- Valid Source code is not responsible for minification; instead, minifiers tokenize semicolons independently.
+- ASI does not necessarily insert missing semicolons at the end of a line.
+
+The last point is frequently misunderstood. ASI doesn't handle all semicolon insertions but **specifically ensures semicolons are inserted at the end of JavaScript sentences** where necessary.
+
+In JavaScript, a sentence typically refers to a complete statement or expression that performs a specific action or computation. LambdaScript embraces ASI, as advocated by the JavaScript Standard Style.
+
+
+In practice, ASI in JavaScript behaves similarly to programming languages that don't rely on end of sentence semicolons such as Golang, Ruby, and Swift, where semicolons may only be necessary in non-end-of-sentence scenarios.
+
+### 2.3. JS Docs Type Checking
+JSDoc comments provide an effective means to type-check your JavaScript code within your editor using the Language Service Protocol (LSP). Text editors like VSCode and NeoVim, equipped with the TypeScript extension, can leverage JSDocs to enable seamless type-checking for JavaScript. For further insights, refer to section ?.?.
+
 
 ## 3. Modules
 The script tag feature of JavaScript Modules, also known as ECMAScript Modules (ES modules), attained full browser support in early 2018 and stable Node.js support in 2019.
