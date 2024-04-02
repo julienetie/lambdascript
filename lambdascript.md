@@ -72,7 +72,7 @@ However, prioritization can be based on encountered use cases, left to your disc
             
      - 2.2. [Use Automatic Semicolon Insertion](#22-use-automatic-semicolon-insertion-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 
-     - 2.3. [JS Docs Type Checking](#23-js-docs-type-checking)
+     - 2.3. [JSDoc Type Checking](#23-jsdoc-type-checking)
 - Modules
 
 - Variables
@@ -249,8 +249,8 @@ In JavaScript, a sentence typically refers to a complete statement or expression
 
 In practice, ASI in JavaScript behaves similarly to programming languages that don't rely on end of sentence semicolons such as Golang, Ruby, and Swift, where semicolons may only be necessary in non-end-of-sentence scenarios.
 
-### 2.3. JS Docs Type Checking
-JSDoc comments provide an effective means to type-check your JavaScript code within your editor using the Language Service Protocol (LSP). Text editors like VSCode and NeoVim, equipped with the TypeScript extension, can leverage JSDocs to enable seamless type-checking for JavaScript. For further insights, refer to section ?.?.
+### 2.3. JSDoc Type Checking
+JSDoc comments provide an effective means to type-check your JavaScript code within your editor using the Language Service Protocol (LSP). Text editors like VSCode and NeoVim, equipped with the TypeScript extension, can leverage JSDoc to enable seamless type-checking for JavaScript. For further insights, refer to section ?.?.
 
 
 ## 3. Modules
