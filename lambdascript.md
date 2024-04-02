@@ -80,7 +80,7 @@ However, prioritization can be based on encountered use cases, left to your disc
  
      - 3.2. [Use the .js Extension](#32-use-the-js-extension-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
      
-     - 3.3. [Using Import Maps for Browser Development](#33-using-import-maps-for-browser-development-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+     - 3.3. [Use Import Maps for Browser Development](#33-using-import-maps-for-browser-development-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 
 - Variables
 
@@ -281,7 +281,7 @@ The ".mjs" file extension was introduced to clearly distinguish files containing
 
 However, with the increasing adoption and support for ES modules, the necessity to explicitly differentiate between the two module strategies diminishes. As ES modules become more prevalent, there will likely be little practical benefit in enforcing this distinction.
 
-### 3.3. Using Import Maps for Browser Development [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+### 3.3. Use Import Maps for Browser Development [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 Import Maps offer a streamlined way to associate module-specifiers (URLs) with designated names there are several benefits to using Import Maps:
 
 - Shorthand module names: Simplify referencing modules across your site by using shorthand names instead of full URLs.
