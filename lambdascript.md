@@ -73,7 +73,9 @@ However, prioritization can be based on encountered use cases, left to your disc
      - 2.2. [Use Automatic Semicolon Insertion](#22-use-automatic-semicolon-insertion-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 
      - 2.3. [JSDoc Type Checking](#23-jsdoc-type-checking)
-- Modules
+- 3\. [**Modules**](#modules)
+
+     - 3.1. [Use ES Modules](#use-es-modules-) 
 
 - Variables
 
@@ -254,8 +256,8 @@ JSDoc comments provide an effective means to type-check your JavaScript code wit
 
 
 ## 3. Modules
-The script tag feature of JavaScript Modules, also known as ECMAScript Modules (ES modules), attained full browser support in early 2018 and stable Node.js support in 2019.
-The adoption of ES modules is steadily increasing, while traditional CommonJS usage is gradually decreasing. 
+The _type module_ feature of the script tag, also known as ECMAScript Modules (ES modules), attained full browser support in early 2018 and stable Node.js support in 2019.
+The adoption of ES modules is steadily increasing, while traditional CommonJS usage is on a gradual decline in terms of usage. ECMAScript modules stand as the sole formal standard for module systems in JavaScript and should be prefered over alternative module solutions.
 
 ### 3.1. Use ES Modules [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 Embracing ES modules in JavaScript is crucial for several reasons:
@@ -275,25 +277,26 @@ The ".mjs" file extension was introduced to clearly distinguish files containing
 However, with the increasing adoption and support for ES modules, the necessity to explicitly differentiate between the two module strategies diminishes. As ES modules become more prevalent, there will likely be little practical benefit in enforcing this distinction.
 
 ### 3.3. Use Import Maps [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
-Import Maps offer a streamlined way to associate module-specifiers (URLs) with designated names. Import Maps are supported across all major browsers. 
-In the browser context you can import ES modules using `type="module"` in a script tag or by utilizing Import Maps.
+Import Maps offer a streamlined way to associate module-specifiers (URLs) with designated names there are several benefits to using Import Maps:
 
+- Shorthand module names: Simplify referencing modules across your site by using shorthand names instead of full URLs.
+- Cache busting individual modules: Update only modified files without requiring users to re-download the entire codebase.
+- Reduce script-tag clutter: Minimize the number of script tags in your HTML documents for cleaner code organization.
+- Scoped imports: Achieve polymorphic behavior by allowing different imports of the same reference based on the specified path.
+- Security through scoping: Modules scoped within specific contexts cannot be accessed by other modules outside of that scope.
 
-A common misconception regarding Import Maps is that the loading performance of multiple files is significantly slower when compared to a single bundle or code-split modules; however, this is not entirely accurate in practice.
+Despite their HTML-based syntax, Import Maps offer solutions beyond the capabilities of JavaScript bundlers. Fortunately, Import Maps are supported by all major browsers, providing a standardized solution for managing module dependencies.
 
-- Reduced Initial Load: Import Maps ensure users only download code for the specific page, minimizing the initial load compared to single bundles that require a full download.
+The prevailing notion surrounding Import Maps performance often leads to concerns being misdirected. Although Import Maps may not match the loading performance of a single bundled file, they offset this difference in performance through various means.
+
+- Reduced Initial Load: Import Maps can ensure users only download code for the specific page, vastly minimizing the initial load compared to single bundles that require a full download.
 - Selective Loading: Import Maps enable loading only what the page necessitates, thus avoiding the loading of unused code present in a single bundle.
 - Efficient Updates: For returning visitors, only files that have changed (e.g., with a new filename hash) will be downloaded. In contrast, a single bundle would necessitate a full download regardless of the extent of changes.
 - Simplified Implementation: Import Maps eliminate the need for boilerplate logic of some single bundles and code-split modules.
 - No duplicated code: Code-splitting can occasionally result in duplicated shared dependencies.
 
-In real-world usage, many of the modularity and caching benefits of Import Maps make up for the performance degradation compared to the use of single bundles and code-split modules. All the aforementioned concerns are mostly negligible for small projects. However, large-scale projects may require a more comprehensive evaluation of resource loading to find a good balance between the size of modules and the number of modules to include.
 
-Managing ES modules natively in large-scale projects (projects with dozens of modules) without the use of Import Maps can become tedious:
-- URLs will need to be updated for all instances of the same module specifiers, as well as their filename hashes.
-- Managing ModuleSpecifier query strings is impractical, as it requires a hierarchical domino effect of changes for nested modules.
-
-Import Maps also introduces scoping which has conditional and security benefits that are not possible without use of the specification.
+Many of the aforementioned details may be negligible for small-scale projects. Though, large-scale projects may require a more comprehensive evaluation of resource loading to find a good balance between the size of modules and the number of modules to include.
 
 ## 4. Variables
 
