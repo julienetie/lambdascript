@@ -77,10 +77,12 @@ However, prioritization can be based on encountered use cases, left to your disc
 
 - Variables
 
-- Types
-  
-- Void 
+- Memory Resource and Reference Management
 
+- Types
+
+- Void
+  
 - Conditional Statements
 
 - Lambda Functions
@@ -88,8 +90,6 @@ However, prioritization can be based on encountered use cases, left to your disc
 - Exception Handling
 
 - State Management
-
-- Memory Resource and Reference Management
 
 - Templating
 
