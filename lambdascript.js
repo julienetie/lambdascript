@@ -102,8 +102,8 @@ export const safe = {
      * If a placeholder function is provided, returns the result of the function if it returns a number and not NaN.
      * Otherwise, returns the provided placeholder value.
      * @param {*} value - The value to convert to a numeric value.
-     * @param {number|function} [placeholder=empty] - The placeholder value or function.
-     * @returns {number} The converted numeric value.
+     * @param {string|function} [placeholder=empty] - The placeholder value or function.
+     * @returns {number|string} The converted numeric value.
      */
   numeric: (value, placeholder = empty) => {
     if (typeof value === 'number' && !Number.isNaN(value)) return value
@@ -120,8 +120,8 @@ export const safe = {
      * If a placeholder function is provided, returns the result of the function if it returns an integer.
      * Otherwise, returns the provided placeholder value.
      * @param {*} value - The value to convert to an integer.
-     * @param {number|function} [placeholder=empty] - The placeholder value or function.
-     * @returns {number} The converted integer value.
+     * @param {string|function} [placeholder=empty] - The placeholder value or function.
+     * @returns {number|string} The converted integer value.
      */
   int: (value, placeholder = empty) => {
     if (Number.isInteger(value)) return value
@@ -222,7 +222,7 @@ export const isSymbol = value => typeof value === 'symbol'
 export const isNonValue = value => value === undefined || value === null || Number.isNaN(value)
 
 
-
+/** @param {*} type  */
 const createType = type => Symbol(type)
 
 export const string = createType('string')
@@ -253,12 +253,16 @@ const typeCheckers = {
   integer: isInteger,
   nan: isNaN,
   numeric: isNumeric,
+  /** @param {*} value */
   null: value => value === null,
   object: isObject,
   symbol: isSymbol,
+    /** @param {*} value */
   undefined: value => value === undefined,
   nonvalue: isNonValue,
+    /** @param {*} value */
   anynumber: value => typeof value === 'number',
+    /** @param {*} value */
   anyobject: value => typeof value === 'object',
 }
 
@@ -272,6 +276,7 @@ const typeCheckers = {
  * @returns {Object} An object with error handling methods and a flag indicating whether an error occurred.
  */
 export const exc = (value, ...types) => {
+  /** @type {any[] | undefined} */
   let results // Variable to store results
   let err = true // Flag to indicate if an error occurred
 
@@ -353,3 +358,16 @@ export const exc = (value, ...types) => {
     err // Return error flag
   }
 }
+
+
+const test = value => value * 6000 
+
+function ggg (hello){
+  console.log(hello)
+
+
+  return (what) => {
+  }
+}
+
+ggg()
