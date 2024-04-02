@@ -76,11 +76,11 @@ However, prioritization can be based on encountered use cases, left to your disc
        
 - 3\. [**Modules**](#modules)
 
-     - 3.1. [Use ES Modules](#use-es-modules-)
+     - 3.1. [Use ES Modules](#31-use-es-modules-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
  
-     - 3.2. [Use the .js Extension](#32-use-the-js-extension-)
+     - 3.2. [Use the .js Extension](#32-use-the-js-extension-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
      
-     - 3.3. [Using Import Maps for Browser Development](#33-using-import-maps-for-browser-development-)
+     - 3.3. [Using Import Maps for Browser Development](#33-using-import-maps-for-browser-development-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 
 - Variables
 
