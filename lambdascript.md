@@ -82,7 +82,7 @@ However, prioritization can be based on encountered use cases, left to your disc
      
      - 3.3. [Use Import Maps for Browser Development](#33-use-import-maps-for-browser-development-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 
-- 4\. [Variables](#4-variables) 
+- 4\. [**Variables**](#4-variables) 
      
      - 4.1. [Use const for variables that are not reassigned](#41-use-const-for-variables-that-are-not-reassigned-) [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
       
