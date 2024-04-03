@@ -426,7 +426,7 @@ value === undefined || value === null || Number.isNaN(value)
 > ```
 
 // Needs grammar check
-### 5.x. Classifying Objects using instanceof [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
+### 5.x. Classify Objects using instanceof [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
 In JavaScript, a common misconception is that object instances of built-in interfaces and constructors have unique types that JavaScript lacks the ability to interpret.Though, this is not the case. All object instances are of type "object," and each different object instance has an internal classification (called a class) (Not to be confused with the _class_ keyword).
 
 #### Arrays are objects
