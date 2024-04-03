@@ -87,8 +87,6 @@ However, prioritization can be based on encountered use cases, left to your disc
      - 4.1. [Use const for variables that are not reassigned](#41-use-const-for-variables-that-are-not-reassigned-) [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
       
 
-- Memory Resource and Reference Management
-
 - Types
 
 - Void
@@ -346,6 +344,7 @@ Display a placeholder for a type mismatch when anticipating an integer value.
 ```javascript
 safe.int(value, placeholder)
 ```
+
 ### 5.2. Compare using the strict equality operator [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key) 
 Employing the strict equality operator for all operand comparisons aims to enforce consistency and predictability, which is likely to result in enhanced type safety, particularly in large-scale projects. Whilst the loose-equality operator can serve adequately for testing various types, with or without coercion, strict equality provides greater predictability by mandating both value and type to match.
 ```javascript
@@ -421,7 +420,61 @@ value === undefined || value === null || Number.isNaN(value)
 > ```javascript
 > typeof value === 'object'
 > ```
-  
+> #### any
+> ```javascript
+> // The absence of type-checking, you don't need to do anything
+> ```
+
+// Needs grammar check
+### 5.x. Classifying Objects using instanceof [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
+In JavaScript, a common misconception is that object instances of built-in interfaces and constructors have unique types that JavaScript lacks the ability to interpret.Though, this is not the case. All object instances are of type "object," and each different object instance has an internal classification (called a class) (Not to be confused with the _class_ keyword).
+
+#### Arrays are objects
+In JavaScript, arrays are of type object, this decision was initally made for memory efficiency. Arrays can be explicitly classified Since the introduction of `Array.isArray()`. 
+Despite being an object, `isArray` is included in the utility functions beause it is a common dataset that often requires frequent distinction from other classes of object.
+
+#### Null is an object
+Null being an object was a mistake in the development of the language that has remained due to backwards compatibility. Null has been comparable using value === null since the release of ECMAScript 3. Because null has a type of object, it should always be compared for excluding from other object classes. Despite null being an object it is considered and intended as a primitive value.
+
+#### Type-checking objects
+To target object instances and object literals we can use `typeof value === 'object' &&  vlaue !== null  && !Array.isArray(value)` or equivalent (See lambdascript.js). We use this expression 
+because we already have mechanisms for checking null and Array. We are happy to target object literals and object instances as one because JavaScript has the `instanceof` keyword that allows us to distringish between the internal object's class definition.   
+
+#### instanceof
+```javascript
+new Blob()                             // [object Blob]
+new Promise(() => {})                  // [object Promise]
+document.createElement('span')         // [object HTMLSpanElement]
+new MouseEvent('click')                // [object MouseEvent]                      
+```
+The `instanceof` keyword was inspired by the same named operator in the Java programming language. It returns a boolean if the left operand is an instnace of the right. 
+`instanceof` allow us to check the class of an object instance similarly to `typeof`.
+```javascript
+new Blob() instanceof Blob                 // true
+new Promise(() => {}) instanceof Promise   // [object Promise]
+document.createElement('span') isntanceof HTMLSpanElement         // [object HTMLSpanElement]
+new MouseEvent('click')                // [object MouseEvent]  
+```
+
+#### Do not conflate type-hints with your approach to JavaScript development
+JSDoc backed by TypeScripts IntelliSense provdes a useful way to give types hints for JavaScript in supported text-editors. **It's important to remember that the types featured in TypeScript's JSDoc typechecker are not real** but they do serve the purpose of reducing type mismatches before runtime.
+
+JavaScript is a prototype language meaning that one entity can be an instance of several constructors and or interfaces. 
+
+```javascript
+() => {} instanceof Function                                // true
+() => {} instanceof Object                                  // true
+document.createElement('div') instanceof Element            // true
+document.createElement('div') instanceof Object             // true
+document.createElement('div') instanceof HTMLDivElement     // true
+```
+Hopefully the above exmaple should express the differenc between a "type" and an "object class". Programming languages like TypeScript treat object instances as types, which deviates from the native object classification system of JavaScript and often incures unecessisary misrepresented typechecking. 
+
+- When working with object literals, you must determine that the value is not an array or null.
+- When working with object instances, you should detrmine the instanceof the value.
+
+If you're working with both object literals and object instances togeather both approaches coincide.
+
 
 ### 5.4. Use reliable conditinal statements [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
 Use conditional statemenets with reliable typechecking. 
@@ -773,6 +826,8 @@ This is a list of language constructs to either avoid or evade in JavaScript whe
 ### 8.9 `Object.seal()` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
 
 ### 8.10 `prototype` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
+
+### 8.x `==` [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
 
 ### 8.11 `new` user-defined-constructor [<img src="https://img.shields.io/badge/Avoid-eb34a2" alt="Avoid" title="Refrain from encountering where possible">](#key)
 The `new` keyword used with a user-defined-constructor should be avoided as it introduces context-based programming. 
