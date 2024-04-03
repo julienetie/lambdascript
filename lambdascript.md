@@ -427,7 +427,7 @@ value === undefined || value === null || Number.isNaN(value)
 
 // Needs grammar check
 ### 5.x. Classify Objects using instanceof [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
-In JavaScript, a common misconception is that object instances of built-in interfaces and constructors have unique types that JavaScript lacks the ability to interpret.Though, this is not the case. All object instances are of type "object," and each different object instance has an internal classification (called a class) (Not to be confused with the _class_ keyword).
+In JavaScript, a common misconception is that object instances of interfaces and constructors have unique types that JavaScript lacks the ability to interpret.Though, this is not the case. All object instances are of type "object," and each different object instance has an internal classification (called a class) (Not to be confused with the _class_ keyword).
 
 #### Arrays are objects
 In JavaScript, arrays are of type object, this decision was initally made for memory efficiency. Arrays can be explicitly classified Since the introduction of `Array.isArray()`. 
@@ -450,16 +450,16 @@ new MouseEvent('click')                // [object MouseEvent]
 The `instanceof` keyword was inspired by the same named operator in the Java programming language. It returns a boolean if the left operand is an instnace of the right. 
 `instanceof` allow us to check the class of an object instance similarly to `typeof`.
 ```javascript
-new Blob() instanceof Blob                 // true
-new Promise(() => {}) instanceof Promise   // [object Promise]
-document.createElement('span') isntanceof HTMLSpanElement         // [object HTMLSpanElement]
-new MouseEvent('click')                // [object MouseEvent]  
+new Blob() instanceof Blob                                       // true
+new Promise(() => {}) instanceof Promise                         // true
+document.createElement('span') instanceof HTMLSpanElement        // true
+new MouseEvent('click') instanceof MoouseEvent                   // true    
 ```
 
 #### Do not conflate type-hints with your approach to JavaScript development
-JSDoc backed by TypeScripts IntelliSense provdes a useful way to give types hints for JavaScript in supported text-editors. **It's important to remember that the types featured in TypeScript's JSDoc typechecker are not real** but they do serve the purpose of reducing type mismatches before runtime.
+TypeScripts IntelliSense provdes a useful way to give types hints for JavaScript using JSDoc syntax for reducing type mismatches before runtime. It's crucial to to remember that the types defined in TypeScript and JSDoc are not all standard they conflate built-in objects and host-objects (Objects specific to a particular runtime, not the JavaScript language) as being "types" instead of classifications. This is fine for type-checking within an ide but is not idiomatic to how JavaScript behaves.
 
-JavaScript is a prototype language meaning that one entity can be an instance of several constructors and or interfaces. 
+JavaScript is a prototype language meaning that one entity can be an instance of several constructors and or interfaces.  
 
 ```javascript
 () => {} instanceof Function                                // true
@@ -468,7 +468,7 @@ document.createElement('div') instanceof Element            // true
 document.createElement('div') instanceof Object             // true
 document.createElement('div') instanceof HTMLDivElement     // true
 ```
-Hopefully the above exmaple should express the differenc between a "type" and an "object class". Programming languages like TypeScript treat object instances as types, which deviates from the native object classification system of JavaScript and often incures unecessisary misrepresented typechecking. 
+The above exmaple expresses the differenc between a "type" and an "object class". Programming languages like TypeScript treat object instances as types, which deviates from the native object classification system of JavaScript and often incures misrepresented typechecking where one value can belong to multiple types which is not prevelent in most major programming languages including JavaScript. 
 
 - When working with object literals, you must determine that the value is not an array or null.
 - When working with object instances, you should detrmine the instanceof the value.
