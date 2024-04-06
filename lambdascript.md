@@ -325,21 +325,21 @@ A final value should be regarded as a value intended for consumption by end-user
 This convention is intended as a paramount JavaScript best practice, essential for competently delivering content. 
 NaN, undefined, and null are the undesirable values that safeguarding helps to mitigate against.
 
-#### 5.1.1. Safeguard string
+#### Safeguard string
 Display a placeholder for a type mismatch when anticipating a text value.
 
 ```javascript
 safe.str(value, placeholder)
 ```
 
-#### 5.1.2. Safeguard number
+#### Safeguard number
 Display a placeholder for a type mismatch when anticipating a numeric value.
 
 ```javascript
 safe.number(value, placeholder)
 ```
 
-#### 5.1.2. Safeguard integer
+#### Safeguard integer
 Display a placeholder for a type mismatch when anticipating an integer value.
 
 ```javascript
@@ -426,7 +426,7 @@ value === undefined || value === null || Number.isNaN(value)
 > // The absence of type-checking, you don't need to do anything
 > ```
 
-### 5.x. Classify Objects using instanceof [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
+### 5.4. Classify Objects using instanceof [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
 In JavaScript, a common misconception is that object instances of interfaces and constructors have unique types that JavaScript lacks the ability to interpret.Though, this is not the case. All object instances are of type "object," and each different object instance has an internal class (Not to be confused with the _class_ keyword).
 
 #### What is an Object?
@@ -481,10 +481,10 @@ The above example illustrates the difference between a "type" and an "object cla
 If you're working with both object literals and object instances togeather both approaches coincide.
 
 
-### 5.4. Use reliable conditinal statements [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
+### Use reliable conditinal statements
 Use conditional statemenets with reliable typechecking. 
 
-#### 5.4.1 Common Falsy and Truthy Types
+#### Common Falsy and Truthy Types
 Unchecked values are not consistently reliable and remain among the primary culprits for type errors in JavaScript development.
 ```javasscript
 if(value)
