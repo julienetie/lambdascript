@@ -94,10 +94,15 @@ However, prioritization can be based on encountered use cases, left to your disc
      - 5.2. [Compare Using the Strict Equality Operator](#52-compare-using-the-strict-equality-operator-) [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
  
      - 5.3. [Use Rectified Type Checking](#53-use-rectified-type-checking-) [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
+
+
+- 6\. [**Objects**](#6-objects)
+     
+     - 6.1. [Classify Objects Using instanceof](#61-classify-objects-using-instanceof-) [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
  
-     - 5.4. [Classify Objects Using instanceof](#54-classify-objects-using-instanceof-) [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
- 
-- Void
+- 7\. [**Void**](#7-void)
+
+     - 7.1. [Use void to Denote Voided Return Values] [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)  
   
 - Conditional Statements
 
@@ -434,7 +439,7 @@ value === undefined || value === null || Number.isNaN(value)
 > // The absence of type-checking, you don't need to do anything
 > ```
 
-### 5.4. Handel Rectified Type Mismatch
+### 5.4. Handel Rectified Type Mismatch 
 Programming for dynamic types in JavaScript often requires ensuring types are as expected and managing mismatched types when they occur. LambdaScript recommends three ways to manage type mismatches:
 
 - By console error
@@ -466,8 +471,9 @@ mis(value, _function, array).Error(errorMessageFunction, TypeError)
 > _You are not obliged to utilize functions from lambdascript.js. The above can be implemented by referecing the expessions in section 5.3, accompanied by an error message, warning message, or the necessary conditional logic. Throwing errors should only be necessary for edge cases; the goal should be to avoid disrupting the flow of application logic whenever possible._
 
 
+## 6. Objects 
 
-### 5.4. Classify Objects Using instanceof [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
+### 6.1. Classify Objects Using instanceof [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
 In JavaScript, a common misconception is that object instances of interfaces and constructors have unique types that JavaScript lacks the ability to interpret.Though, this is not the case. All object instances are of type "object," and each different object instance has an internal class (Not to be confused with the _class_ keyword).
 
 #### What is an Object?
@@ -553,6 +559,20 @@ It could also be seen as potentially falsy if we expect:
 - false
 
 There isn't a clear-cut inverse rule. It's crucial never to assume a dynamic value will be the type you expect.
+
+## 7. Void
+// @todo
+### 7.1. Use void to Denote Voided Return Values [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+// @todo
+
+## 8. Conditional Statements
+
+## 9. Templating
+//@ Use template literals for templating DOM Nodes
+//@ Use template literals for server side HTML templates
+//@ Use tagged template functions advanced templating 
+//@ Avoid handlebars + others
+
 
 
 ## 6. Arrow Functions 
@@ -800,11 +820,6 @@ TBA
 //@ FinalizationRegistry
 // Use only where necessary
 
-## x. Templating
-//@ Use template literals for templating DOM Nodes
-//@ Use template literals for server side HTML templates
-//@ Use tagged template functions advanced templating 
-//@ Avoid handlebars + others
 
 
 
