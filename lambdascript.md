@@ -87,7 +87,7 @@ However, prioritization can be based on encountered use cases, left to your disc
      - 4.1. [Use const for variables that are not reassigned](#41-use-const-for-variables-that-are-not-reassigned-) [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
       
 
-- 5\. [Types](#5-types)
+- 5\. [**Types**](#5-types)
 
      - 5.1. [Safeguard Final Values](#51-safeguard-final-values-) [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
  
