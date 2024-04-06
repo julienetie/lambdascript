@@ -87,8 +87,17 @@ However, prioritization can be based on encountered use cases, left to your disc
      - 4.1. [Use const for variables that are not reassigned](#41-use-const-for-variables-that-are-not-reassigned-) [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
       
 
-- 5\. [Types](#)
+- 5\. [Types](#5-types)
 
+     - 5.1. Safeguard Final Values
+ 
+     - 5.2. Compare Using the Strict Equality Operator
+ 
+     - 5.3. Use Rectified Type Checking
+ 
+     - 5.4. Classify Objects Using instanceof
+ 
+     - 
 - Void
   
 - Conditional Statements
@@ -315,7 +324,7 @@ Usage of const can help to catch unintended mutations early in the development p
 
 JavaScript is a dynamically typed language, implying that variable types are inferred upon assignment, and static type checking is absent. Instead, JavaScript handles type mismatches through a feature called type coercion, which can often become a footgun if not managed accordingly. Quirks abound in JavaScript's type system. However, dynamic types in JavaScript are entirely manageable, and there are practices to mitigate common issues when exposing results.
 
-### 5.1. Safeguard final values [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
+### 5.1. Safeguard Final Values [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
 
 Use conditional statements to shield end-users from encountering undesirable final values.  
 
@@ -346,13 +355,13 @@ Display a placeholder for a type mismatch when anticipating an integer value.
 safe.int(value, placeholder)
 ```
 
-### 5.2. Compare using the strict equality operator [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key) 
+### 5.2. Compare Using the Strict Equality Operator [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key) 
 Employing the strict equality operator for all comparisons aims to enforce consistency and predictability, which is likely to result in enhanced type safety, particularly in large-scale projects. Whilst the loose-equality operator can serve adequately for testing various types, with or without coercion, strict equality provides greater predictability by mandating both value and type to match.
 ```javascript
 leftOperand === rightOperand
 ```
 
-### 5.3. Use rectified typechecking [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
+### 5.3. Use Rectified Type Checking [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
 There are various ways to check common types in JavaScript, but the standard approach might not always align with general-purpose intentions.
 Below illustrates common types with type checks, rectified for broader utility.
 
@@ -426,7 +435,7 @@ value === undefined || value === null || Number.isNaN(value)
 > // The absence of type-checking, you don't need to do anything
 > ```
 
-### 5.4. Classify Objects using instanceof [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
+### 5.4. Classify Objects Using instanceof [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
 In JavaScript, a common misconception is that object instances of interfaces and constructors have unique types that JavaScript lacks the ability to interpret.Though, this is not the case. All object instances are of type "object," and each different object instance has an internal class (Not to be confused with the _class_ keyword).
 
 #### What is an Object?
