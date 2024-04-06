@@ -89,15 +89,14 @@ However, prioritization can be based on encountered use cases, left to your disc
 
 - 5\. [Types](#5-types)
 
-     - 5.1. Safeguard Final Values
+     - 5.1. [Safeguard Final Values](#51-safeguard-final-values-) [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
  
-     - 5.2. Compare Using the Strict Equality Operator
+     - 5.2. [Compare Using the Strict Equality Operator](#52-compare-using-the-strict-equality-operator-) [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
  
-     - 5.3. Use Rectified Type Checking
+     - 5.3. [Use Rectified Type Checking](#53-use-rectified-type-checking-) [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
  
-     - 5.4. Classify Objects Using instanceof
+     - 5.4. [Classify Objects Using instanceof](#54-classify-objects-using-instanceof-) [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
  
-     - 
 - Void
   
 - Conditional Statements
