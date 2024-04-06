@@ -434,6 +434,39 @@ value === undefined || value === null || Number.isNaN(value)
 > // The absence of type-checking, you don't need to do anything
 > ```
 
+### 5.4. Handel Rectified Type Mismatch
+Programming for dynamic types in JavaScript often requires ensuring types are as expected and managing mismatched types when they occur. LambdaScript recommends three ways to manage type mismatches:
+
+- By console error
+- By console warning
+- Conditionally
+
+Mismatched types are not necessarily runtime errors and should not disrupt the flow of the program unless there's a good reason to. LambdaScript provides a mis function to help manage potential mismatched types.
+
+```javascript
+import { string, array, _function, numeric } from './lambdascript.js'
+
+// Logs an error message if the value is not a string or array.
+mis(value, string, array).error(errorMessageFunction)
+
+// Logs a warning message if the value is not either a function, numeric or null.
+mis(value, _function, numeric, null).warn(warningMessageFunction)
+
+// Returns a boolean `err` which is true if the type is incorrect. And returns the recieved type.
+const { err, type } = mis(value, string)
+
+if (err) {
+  // Manage type mismatch.
+  console.log(type)
+}
+
+// Logs an error message if the value is not a string or array and throws a new Error
+mis(value, _function, array).Error(errorMessageFunction, TypeError)
+```
+> _You are not obliged to utilize functions from lambdascript.js. The above can be implemented by referecing the expessions in section 5.3, accompanied by an error message, warning message, or the necessary conditional logic. Throwing errors should only be necessary for edge cases; the goal should be to avoid disrupting the flow of application logic whenever possible._
+
+
+
 ### 5.4. Classify Objects Using instanceof [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
 In JavaScript, a common misconception is that object instances of interfaces and constructors have unique types that JavaScript lacks the ability to interpret.Though, this is not the case. All object instances are of type "object," and each different object instance has an internal class (Not to be confused with the _class_ keyword).
 
