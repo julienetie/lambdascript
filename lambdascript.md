@@ -87,7 +87,7 @@ However, prioritization can be based on encountered use cases, left to your disc
      - 4.1. [Use const for variables that are not reassigned](#41-use-const-for-variables-that-are-not-reassigned-) [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
       
 
-- Types
+- 5\. [Types](#)
 
 - Void
   
@@ -312,11 +312,12 @@ Usage of const can help to catch unintended mutations early in the development p
 
 
 ## 5. Types
-JavaScript features type coercsion which can sometimes often become a footgun if not managed accordingly. Quirks abound in JavaScript's type system. However, dynamic types in JavaScript are entirely manageable, and there are practices to mitigate common issues when exposing results.
+
+JavaScript is a dynamically typed language, implying that variable types are inferred upon assignment, and static type checking is absent. Instead, JavaScript handles type mismatches through a feature called type coercion, which can often become a footgun if not managed accordingly. Quirks abound in JavaScript's type system. However, dynamic types in JavaScript are entirely manageable, and there are practices to mitigate common issues when exposing results.
 
 ### 5.1. Safeguard final values [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
 
-Use conditional statements to shield end-users from encountering undesirable output values. The rule the prevent this is to treat 
+Use conditional statements to shield end-users from encountering undesirable final values.  
 
 > ### All final values are potential non-values.
 
@@ -346,14 +347,14 @@ safe.int(value, placeholder)
 ```
 
 ### 5.2. Compare using the strict equality operator [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key) 
-Employing the strict equality operator for all operand comparisons aims to enforce consistency and predictability, which is likely to result in enhanced type safety, particularly in large-scale projects. Whilst the loose-equality operator can serve adequately for testing various types, with or without coercion, strict equality provides greater predictability by mandating both value and type to match.
+Employing the strict equality operator for all comparisons aims to enforce consistency and predictability, which is likely to result in enhanced type safety, particularly in large-scale projects. Whilst the loose-equality operator can serve adequately for testing various types, with or without coercion, strict equality provides greater predictability by mandating both value and type to match.
 ```javascript
 leftOperand === rightOperand
 ```
 
 ### 5.3. Use rectified typechecking [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
 There are various ways to check common types in JavaScript, but the standard approach might not always align with general-purpose intentions.
-Below illustrates common types with type checks, refined for broader utility.
+Below illustrates common types with type checks, rectified for broader utility.
 
 #### isArray
 ```javascript
@@ -425,20 +426,20 @@ value === undefined || value === null || Number.isNaN(value)
 > // The absence of type-checking, you don't need to do anything
 > ```
 
-// Needs grammar check
 ### 5.x. Classify Objects using instanceof [<img src="https://img.shields.io/badge/Imperative-34eb9f" alt="Imperative" title="Absolutely necessary and indispensable">](#key)
-In JavaScript, a common misconception is that object instances of interfaces and constructors have unique types that JavaScript lacks the ability to interpret.Though, this is not the case. All object instances are of type "object," and each different object instance has an internal classification (called a class) (Not to be confused with the _class_ keyword).
+In JavaScript, a common misconception is that object instances of interfaces and constructors have unique types that JavaScript lacks the ability to interpret.Though, this is not the case. All object instances are of type "object," and each different object instance has an internal class (Not to be confused with the _class_ keyword).
+
+#### What is an Object?
+An object in JavaScript is a mutable data structure, meaning its properties and values can be changed. These objects can be referenced by variables, making them a versatile tool for representing complex data structures and modeling real-world entities. 
 
 #### Arrays are objects
-In JavaScript, arrays are of type object, this decision was initally made for memory efficiency. Arrays can be explicitly classified Since the introduction of `Array.isArray()`. 
-Despite being an object, `isArray` is included in the utility functions beause it is a common dataset that often requires frequent distinction from other classes of object.
+In JavaScript, arrays are a distinct type of object specially designed to store array elements separately from object properties in the memory heap. With the introduction of Array.isArray(), arrays can now be explicitly identified. Despite being considered objects, isArray is included in utility functions due to the frequent need to distinguish arrays from other object classes.
 
 #### Null is an object
-Null being an object was a mistake in the development of the language that has remained due to backwards compatibility. Null has been comparable using value === null since the release of ECMAScript 3. Because null has a type of object, it should always be compared for excluding from other object classes. Despite null being an object it is considered and intended as a primitive value.
+Null being an object was a mistake in the development of the language that has remained due to backwards compatibility. Null has been comparable using `value === null` since the release of ECMAScript 3. Because null has a type of object, it should always be compared for excluding from other object classes. Despite null being an object it is considered and intended as a primitive value.
 
 #### Type-checking objects
-To target object instances and object literals we can use `typeof value === 'object' &&  vlaue !== null  && !Array.isArray(value)` or equivalent (See lambdascript.js). We use this expression 
-because we already have mechanisms for checking null and Array. We are happy to target object literals and object instances as one because JavaScript has the `instanceof` keyword that allows us to distringish between the internal object's class definition.   
+To target object instances and object literals, we can use typeof value === 'object' && value !== null && !Array.isArray(value) or its equivalent (See lambdascript.js). We use this expression because we already have mechanisms for checking null and arrays. We are happy to target object literals with object instances because JavaScript has the instanceof keyword that allows us to distinguish between the internal object's class definition.
 
 #### instanceof
 ```javascript
@@ -456,9 +457,12 @@ document.createElement('span') instanceof HTMLSpanElement        // true
 new MouseEvent('click') instanceof MoouseEvent                   // true    
 ```
 
-#### Do not conflate type-hints with your approach to JavaScript development
-TypeScripts IntelliSense provdes a useful way to give types hints for JavaScript using JSDoc syntax for reducing type mismatches before runtime. It's crucial to to remember that the types defined in TypeScript and JSDoc are not all standard they conflate built-in objects and host-objects (Objects specific to a particular runtime, not the JavaScript language) as being "types" instead of classifications. This is fine for type-checking within an ide but is not idiomatic to how JavaScript behaves.
+#### Do not conflate static types with JavaScript types
+TypeScript's IntelliSense provides a useful way to specify static types for JavaScript using JSDoc syntax, reducing type mismatches before runtime. It's crucial to remember that the types defined in TypeScript and JSDoc are not standard, and they conflate intrinsic objects and host objects (objects specific to a particular runtime, not the JavaScript language) as being "types" instead of classifications.
 
+This breaks with the idiomatic behavior of JavaScript and can be fixed simply by using "object" instead of types defined by interfaces and constructors.
+
+#### One value can be in instace of multiple interfaces and or constructors 
 JavaScript is a prototype language meaning that one entity can be an instance of several constructors and or interfaces.  
 
 ```javascript
@@ -468,7 +472,8 @@ document.createElement('div') instanceof Element            // true
 document.createElement('div') instanceof Object             // true
 document.createElement('div') instanceof HTMLDivElement     // true
 ```
-The above exmaple expresses the differenc between a "type" and an "object class". Programming languages like TypeScript treat object instances as types, which deviates from the native object classification system of JavaScript and often incures misrepresented typechecking where one value can belong to multiple types which is not prevelent in most major programming languages including JavaScript. 
+
+The above example illustrates the difference between a "type" and an "object class." Programming languages like TypeScript treat object instances as types, which deviates from the native object classification system of JavaScript and often results in misrepresented type checking.
 
 - When working with object literals, you must determine that the value is not an array or null.
 - When working with object instances, you should detrmine the instanceof the value.
@@ -506,10 +511,8 @@ It could also be seen as potentially falsy if we expect:
 - null
 - false
 
-There isn't a clear-cut inverse rule. It's crucial never to assume that a dynamic value will always be of the type you expect.
+There isn't a clear-cut inverse rule. It's crucial never to assume a dynamic value will be the type you expect.
 
-### 5.5 Use Void
-TBA
 
 ## 6. Arrow Functions 
 Arrow Functions in JavaScript allow for concise expression of lambda expressions, which are idiomatic to the core language. They provide a succinct syntax for defining anonymous functions, leveraging lambda expression concepts extensively.
