@@ -3,7 +3,7 @@
 
 # λ LambdaScript
 
-### A Vanilla JavaScript Standard for Modern Best Practices
+### The Vanilla JavaScript Standard for Modern Best Practices
 - [Quick Start](https://github.com/julienetie/lambdascript/blob/main/quick-start.md)
 - [The LambdaScript Standard (Unversioned)](https://github.com/julienetie/lambdascript/blob/main/lambdascript.md)
 - [The LambdaScript Utility Library](https://github.com/julienetie/lambdascript/blob/main/lambdascript.js)
