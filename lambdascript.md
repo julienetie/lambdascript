@@ -111,7 +111,8 @@ However, prioritization can be based on encountered use cases, left to your disc
 
 - Exception Handling
 
-- State Management
+- 10\. [State Management](#10-state-management)
+
 
 - Templating
 
@@ -594,6 +595,23 @@ Using a single operand will always guarantee a return of undefined
 //@ Use template literals for server side HTML templates
 //@ Use tagged template functions advanced templating 
 //@ Avoid handlebars + others
+
+
+
+## 10. State Management
+The publish-subscribe pattern is the foundational outcome of every state management solution within a runtime environment.
+Common state management solutions can sometimes become overly complex and inflexible. The publish-subscribe (pub-sub) pattern offers a simpler,
+more flexible alternative. It decouples state changes from state consumption, enhancing modularity and reducing boilerplate code.
+
+Developing a pub-sub state management system doesn't follow a singular approach. Here, we delineate fundamental guidelines for constructing a straightforward and efficient pub-sub system that meets the needs of most software development state management requirements.
+
+- Topics
+- Subscriptions
+- Synchronous / Asynchronous
+
+### Subscribe
+### Publish
+### Unsubscribe
 
 
 
