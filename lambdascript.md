@@ -102,9 +102,8 @@ However, prioritization can be based on encountered use cases, left to your disc
  
 - 7\. [**Void**](#7-void)
 
-     - 7.1. [Void an evaluation](#lambdascript.md#71-void-an-evaluation-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
-     - 7.2. [Use Void for non-leaking Arrow Functions](#72-use-void-for-non-leaking-arrow-functions-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)  
-  
+     - 7.1. [7.1. Do not void multiple operands](#71-do-not-void-multiple-operands-) [<img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">](#key)
+
   
 - Conditional Statements
 
@@ -565,30 +564,23 @@ There isn't a clear-cut inverse rule. It's crucial never to assume a dynamic val
 ## 7. Void()
 The void operator is a unary operator that is useful in various situations where you need to ensure the return value is explicitly undefined.
 
-### 7.1. Void an evaluation [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
-The void operator can be useful for evaluating an expression without returning its result, ensuring that the return value is undefined.
+### 7.1. Do not void multiple operands [<img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">](#key)
+The void keyword should not be used with multiple operands.
 ```js
-const doSomething = () => void(x * 3) // undefined
+void operandA * operandB                   // Undesirable result
+void operandA + operandB + operandC        // Undesirable result
 ```
-It's imperative to use parentheses with the void operator when returning or assigning values. Without parentheses, JavaScript evaluates the expression according to its precedence rules before applying void, which can lead to unexpected results other than undefined.
-
+Void should only be used with a single operand:
 ```js
-// Do not void expressions without parentheses. 
-void 5 * 5     // NaN
-void 3 === '3' // False
-
-// Use void With parentheses
-void (5 * 5)    // undefined
-void (3 === '3' // undefined   
+void operand                               // undefined
+void someFunction()                        // undefined
 ```
-Void will guarantee a return undefined when using parentheses.
-
-### 7.2 Use Void for non-leaking Arrow Functions [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
-Void can be used without parentheses when voiding a single literal or primary expression, such as a function call.
-
-```js
-const action = () => void doSomething() // undefined
+Use parenthesis to evaluate multiple operands as a single operand.
+```javasc
+void (operandA * operandB)                 // undefined
+void (operandA + operandB + operandC())      // undefined
 ```
+Using a single operand will always guarantee a return of undefined
 
 ## 8. Conditional Statements
 - IF: Single line IF statemenet
