@@ -581,7 +581,7 @@ void (3 === '3' // undefined
 ```
 Void will guarantee a return undefined when using parentheses.
 
-### 7.2 Void for non-leaking Arrow Functions [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+### 7.2 Use Void for non-leaking Arrow Functions [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
 Void can be used without parentheses when voiding a single literal or primary expression, such as a function call.
 
 ```js
