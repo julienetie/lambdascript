@@ -591,6 +591,11 @@ const action = () => void doSomething() // undefined
 ```
 
 ## 8. Conditional Statements
+- IF: Single line IF statemenet
+- IF: Guard Clause
+- Switch: Fallthrough
+- Switch: Multi-way branching with conditions 
+
 
 ## 9. Templating
 //@ Use template literals for templating DOM Nodes
