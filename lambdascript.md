@@ -102,7 +102,7 @@ However, prioritization can be based on encountered use cases, left to your disc
  
 - 7\. [**Void**](#7-void)
 
-     - 7.1. [7.1. Do not void multiple operands](#71-do-not-void-multiple-operands-) [<img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">](#key)
+     - 7.1. [Do not void multiple operands](#71-do-not-void-multiple-operands-) [<img src="https://img.shields.io/badge/Evade-eb4034" alt="Evade" title="Strongly encouraged to find a way to circumvent or escape">](#key)
 
   
 - Conditional Statements
