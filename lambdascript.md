@@ -608,7 +608,7 @@ Developing a pub-sub state management system doesn't follow a singular approach.
 - Topics
 - Subscriptions
 - Synchronous / Asynchronous
-
+- Object reference / Structured clone
 ### Subscribe
 ### Publish
 ### Unsubscribe
