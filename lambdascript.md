@@ -560,10 +560,33 @@ It could also be seen as potentially falsy if we expect:
 
 There isn't a clear-cut inverse rule. It's crucial never to assume a dynamic value will be the type you expect.
 
-## 7. Void
-// @todo
-### 7.1. Use void to Denote Voided Return Values [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
-// @todo
+## 7. Void()
+The void operator is a unary operator that is useful in various situations where you need to ensure the return value is explicitly undefined.
+
+### 7.1. Void an evaluation [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+The void operator can be useful for evaluating an expression without returning its result, ensuring that the return value is undefined.
+```js
+const doSomething = () => void(x * 3) // undefined
+```
+It's imperative to use parentheses with the void operator when returning or assigning values. Without parentheses, JavaScript evaluates the expression according to its precedence rules before applying void, which can lead to unexpected results other than undefined.
+
+```js
+// Do not void expressions without parentheses. 
+void 5 * 5     // NaN
+void 3 === '3' // False
+
+// Use void With parentheses
+void (5 * 5)    // undefined
+void (3 === '3' // undefined   
+```
+Void will guarantee a return undefined when using parentheses.
+
+### 7.2 Void for non-leaking Arrow Functions [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
+Void can be used without parentheses when voiding a single literal or primary expression, such as a function call.
+
+```js
+const action = () => void doSomething() // undefined
+```
 
 ## 8. Conditional Statements
 
