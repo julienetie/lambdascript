@@ -103,7 +103,7 @@ However, prioritization can be based on encountered use cases, left to your disc
 - 7\. [**Void**](#7-void)
 
      - 7.1. [Void an evaluation](#lambdascript.md#71-void-an-evaluation-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)
-     - 7.2. [Void an evaluation](#72-use-void-for-non-leaking-arrow-functions-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)  
+     - 7.2. [Use Void for non-leaking Arrow Functions](#72-use-void-for-non-leaking-arrow-functions-) [<img src="https://img.shields.io/badge/Canonical-34b1eb" alt="Canonical" title="Preferred unless unattainable">](#key)  
   
   
 - Conditional Statements
