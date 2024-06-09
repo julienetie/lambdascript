@@ -599,23 +599,38 @@ Using a single operand will always guarantee a return of undefined
 
 
 ## 10. State Management
-The publish-subscribe pattern is the foundational outcome of every state management solution within a runtime environment.
-Common state management solutions can sometimes become overly complex and inflexible. The publish-subscribe (pub-sub) pattern offers a simpler,
-more flexible alternative. It decouples state changes from state consumption, enhancing modularity and reducing boilerplate code.
+The publish-subscribe (pub-sub) pattern is the foundational principle behind all state management solutions within runtime environments. 
+Because it is the foundational principle, it often presents a simpler alternative to many common third-party state management solutions.
+The pub-sub pattern decouples state changes from state consumption, enhancing modularity and reducing boilerplate code.
 
-Developing a pub-sub state management system doesn't follow a singular approach. Here, we delineate fundamental guidelines for constructing a straightforward and efficient pub-sub system that meets the needs of most software development state management requirements.
+In the publish-subscribe (pub-sub) pattern, a callback can subscribe to a topic. When a state change is published to a topic, 
+it automatically triggers all relevant subscribers of that topic.
 
-- Topics
-- Subscriptions
-- Synchronous / Asynchronous
-- Object reference / Structured clone
-### Subscribe
-### Publish
-### Unsubscribe
+### 10.1. Deciding on a State Management Solution
 
+- For typical state management needs, consider leveraging a pub-sub library like: ...
+- Pub-Sub is a straightforward pattern that can be implemented in any programming language within a single module. If additional custom features are required, building a pub-sub implementation may be more suitable.
+- If the aforementioned approaches are not viable, exploring third-party state management libraries is recommended.
 
+### 10.2. Builiding a Pub-Sub State Management Solution
 
+#### Pub-Sub fundamentals 
+- Publisher: The entity responsible for publishing or broadcasting state changes to the subscribers.
+- Subscriber: The entity that listens or subscribes to specific topics or channels to receive state updates.
+- Topic: A named channel or category to which publishers can send messages and subscribers can subscribe to receive messages.
+- Message: The data or payload sent by the publisher to the subscribers when a state change occurs.
+- Subscription: The act of a subscriber indicating interest in receiving updates on a specific topic.
+- Unsubscription: The act of a subscriber indicating that it no longer wishes to receive updates on a specific topic.
+- Broker: An intermediary component that manages the routing of messages between publishers and subscribers, ensuring that messages are delivered to the correct subscribers.
 
+#### Pub-Sub Intermediate 
+- Callback: A function or method registered by a subscriber that gets invoked by the pub-sub system when a relevant message is published.
+- Synchronous Pub-Sub: Pub-sub implementation where the publisher and subscribers operate synchronously, with immediate message delivery upon publication.
+- Asynchronous Pub-Sub: Pub-sub implementation where the publisher and subscribers operate asynchronously, allowing for non-blocking message delivery.
+- Wildcard Subscription: A subscription mechanism where a subscriber can subscribe to multiple topics using a wildcard pattern, such as subscribing to all topics under a certain hierarchy.
+
+#### Pub-Sub Advanced
+- Persistent State: Persistent state encompasses the recording of the application's state over time, facilitating features like undo, redo, and time travel. Its core purpose lies in capturing and maintaining the state data across various temporal instances.
 
 ## 7. Exception Handling
 TBA
