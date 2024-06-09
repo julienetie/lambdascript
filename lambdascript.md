@@ -111,7 +111,7 @@ However, prioritization can be based on encountered use cases, left to your disc
 
 - Exception Handling
 
-- 10\. [State Management](#10-state-management)
+- 10\. [**State Management**](#10-state-management)
 
 
 - Templating
