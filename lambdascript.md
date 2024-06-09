@@ -114,7 +114,8 @@ However, prioritization can be based on encountered use cases, left to your disc
 - 10\. [**State Management**](#10-state-management)
 
 
-- Templating
+- 11\. [**Templating**](#11-templating)
+
 
 - Development and Distribution
 
@@ -631,6 +632,40 @@ it automatically triggers all relevant subscribers of that topic.
 
 #### Pub-Sub Advanced
 - Persistent State: Persistent state encompasses the recording of the application's state over time, facilitating features like undo, redo, and time travel. Its core purpose lies in capturing and maintaining the state data across various temporal instances.
+
+
+## 11. Templating
+Template literals offer a robust solution for templating in front-end and server-side development. With template literals, values can seamlessly be injected into placeholders, enabling dynamic content generation whilst encouraging a separation of concerns. In LambdaScript templates use a VC Pattern. View templates are imported by controllers, controllers contain the logic associated with populating and embeding view templates. 
+
+### 11.1 View Templates
+A View Template is a Lambda function that returns a template literal string.
+- Placeholder values are always destructured from an object.
+- View Templates should only contain values and must not contain any operators or function calls.
+- All values should be string or numerical values (Not NaN, Null or undefined).
+ 
+```html
+export const htmlComponent = ({greetingClass, greeting, message}) => `
+  <div class="${greetingClass}">
+    <h1>${greeting}</h1>
+    ${message}
+  </div>
+`
+```
+### 11.2 View Modules
+A View Module is a file that contains one or multiple View Templates as module exports.
+View Modules are suffixed by `.view.js`
+
+### 11.3 Controllers
+A controller is a module or direcotry responsible for how views are embeded and populated in the application.  
+- Controllers contain all the logic requried to manipulate View Templates to be embeded into the application.
+- Controllers can loop, nest, inject, and conditinally include or exclude View Templates as part of the application.
+- Controllers are suffixed by `.ctrl.js`
+
+### 11.3. Event Modules
+Event modules are optional modules that separate logic for eventListeners or event emitters from controllers.
+Event Modules are suffixed by `.event.js`
+
+
 
 ## 7. Exception Handling
 TBA
