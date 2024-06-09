@@ -634,7 +634,7 @@ it automatically triggers all relevant subscribers of that topic.
 - Persistent State: Persistent state encompasses the recording of the application's state over time, facilitating features like undo, redo, and time travel. Its core purpose lies in capturing and maintaining the state data across various temporal instances.
 
 
-## 11. Templating
+## 11. Declarative Templating
 Template literals offer a robust solution for templating in front-end and server-side development. With template literals, values can seamlessly be injected into placeholders, enabling dynamic content generation whilst encouraging a separation of concerns. In LambdaScript templates use a VC Pattern. View templates are imported by controllers, controllers contain the logic associated with populating and embeding view templates. 
 
 ### 11.1 View Templates
@@ -660,6 +660,13 @@ A controller is a module or direcotry responsible for how views are embeded and 
 - Controllers contain all the logic requried to manipulate View Templates to be embeded into the application.
 - Controllers can loop, nest, inject, and conditinally include or exclude View Templates as part of the application.
 - Controllers are suffixed by `.ctrl.js`
+
+This templating design pattern is heavily reliant on JavaScript's powerful string manipulation capabilities.
+The empty constant is recommended for usage of an empty string `''` as it becomes more declarative when manipulating 
+strings to create dynamic templates.
+- join(empty) is the same as join('')
+- .map, .filter and .reduce become useful when looping and embedding View Templates.
+  
 
 ### 11.3. Event Modules
 Event modules are optional modules that separate logic for eventListeners or event emitters from controllers.
