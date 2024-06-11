@@ -674,15 +674,43 @@ Event Modules are suffixed by `.event.js`
 
 
 
-## 7. Exception Handling
-TBA
+## 12. Exception Handling
+An exception is an object that represents an error or an unexpected behavior that occurs during the execution of a script. When such an error occurs, JavaScript throws an exception, which can be caught and handled using the try, catch, finally construct. This helps to ensure that your program can handle errors gracefully and continue running or Provide useful error messages.
+
+### 12.1 Try Catch
+- The try block contains the code that might throw an exception.
+- The catch block defines how to handle the exception if it occurs within the try block.
+
+### 12.2 Finally block (optional)
+The finally block is always executed, regardless of whether an exception is thrown or not. It's commonly used for cleanup tasks like closing files or releasing resources.
+```js
+try {
+  const file = fs.openSync('myfile.txt', 'r');
+  // Read file content
+} catch (error) {
+  console.error("Error reading file:", error.message);
+} finally {
+  if (file) {
+    fs.closeSync(file);
+  }
+}
+```
+
 
 ## x. Memory Resource and Reference Management
 //@ WeakRef
 //@ FinalizationRegistry
 // Use only where necessary
 
-
+```js
+try {
+  // Code that might throw an exception
+  let result = somethingThatMightFail();
+} catch (error) {
+  // Handle the exception here
+  console.error("Error:", error.message);
+}
+```
 
 
 ## 8. Global Store
