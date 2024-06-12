@@ -673,7 +673,6 @@ Event modules are optional modules that separate logic for eventListeners or eve
 Event Modules are suffixed by `.event.js`
 
 
-
 ## 12. Exception Handling
 An exception is an object that represents an error or an unexpected behavior that occurs during the execution of a script. When such an error occurs, JavaScript throws an exception, which can be caught and handled using the try, catch, finally construct. This helps to ensure that your program can handle errors gracefully and continue running or Provide useful error messages.
 
